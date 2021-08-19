@@ -26,7 +26,8 @@ Global Styles
     box-sizing: border-box;
 }
 body{
-    background: var(--clr-white);
+    font-family: var(--ff-primary);
+    background:hsl(220, 6%, 95%) ;
     line-height: 1.5;
 }
 img{
@@ -58,11 +59,19 @@ Animations
         transform: translate(0);
     }
 }
+@keyframes clouds {
+    from{
+        background-position: 50% 0%;
+    }
+    to{
+        background-position: -550% 0%;
+    }
+}
 /*=================
 Main Header
 =================*/
 .header{
-    background: linear-gradient(to top, hsla(0,0%,0%,.6), hsla(0,0%,0%,.1)),
+    background: linear-gradient(to top, hsla(220, 15%, 16%,.6), hsla(220, 15%, 16%,.1)),
         url("./assets/images/mobile/hero.webp") no-repeat center /cover;
     min-height: 100vh;
     clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
@@ -70,6 +79,16 @@ Main Header
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.header__toggle-btn{
+    background: none;
+    border: none;
+}
+.header__toggle-icon{
+    width: 30px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
 }
 .header__nav-list-container{
     display: none;
@@ -81,7 +100,8 @@ Main Header
     align-items: center;
 
 }
-.header__banner-logo{
+.header__banner-logo,
+.leaders__logo{
     display: block;
     width: 150px;
     margin: 0 auto;
@@ -115,11 +135,12 @@ About Us Section
 .about{
     margin-top: 4.5rem;
     position: relative;
+    background: linear-gradient(to top, hsla(212, 12%, 51%, .3), hsla(220, 6%, 95%, 1) 60%)
 }
 .about::before{
     content: "";
     position: absolute;
-    top: -100%;
+    top: -5.2rem;
     left: 50%;
     transform: translateX(-50%);
     height: 90px;
@@ -127,10 +148,84 @@ About Us Section
     background: var(--clr-black)
 }
 .about__heading{
-    padding-top: .6rem;
+    padding-top: .6em;
     text-align: center;
     font-weight: 700;
     /* transform: translateX(-10px); */
     /* opacity: 0; */
     /* animation: fade-in 1s ease-out forwards; */
 }
+.about .row{
+    display: block;
+    text-align: center;
+    color: var(--clr-black);
+}
+.about__text{
+    margin-top: .8em;
+    width: (90%, 30ch);
+}
+.about__about-btn{
+    display: inline-block;
+    margin: 1em 0;
+    padding: .6em 2em;
+    background: var(--clr-black);
+    color: var(--clr-white);
+    border-radius: var(--radius);
+}
+/*=================
+Leader Section
+=================*/
+.leaders{
+    padding-top: 6rem;
+    position: relative;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+    background: hsla(212, 12%, 51%, .3);
+    overflow: hidden;
+}
+.leaders__logo{
+    margin-top: 6em;
+}
+.leaders__heading{
+    margin-top: .5em;
+    font-size: 2rem;
+    text-shadow: 0 0 10px hsla(220, 15%, 16%, .4),
+        0 0 20px hsla(220, 15%, 16%, .4),
+        0 0 50px hsla(220, 15%, 16%, .3);
+    
+ }
+.leaders::before{
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./assets/images/mobile/expedition.png") center / cover no-repeat;
+    filter: saturate(150%);
+    z-index: -2;
+}
+.leaders::after{
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: url("./assets/images/cloud2.png") center / cover repeat;
+    background-size: 200% 100%;
+    filter: saturate(200%);
+    z-index: -1;
+    animation: clouds 120s linear infinite ;
+}
+.leaders__text{
+    margin-top: 1rem;
+}
+/*=================
+Activities Section
+=================*/
+
+/*=================
+Footer
+=================*/
