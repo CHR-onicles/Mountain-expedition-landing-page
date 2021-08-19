@@ -1,0 +1,47 @@
+/*=================
+Custom Properties
+=================*/
+:root{
+    --ff-accent: 'Gowun Batang', serif;
+    --ff-primary: 'Roboto', sans-serif;
+
+    --clr-white: hsl(220, 6%, 90%);
+    --clr-gray-light: hsl(233, 5%, 61%);
+    --clr-gray: hsl(224, 8%, 38%);
+    --clr-black: hsl(220, 15%, 16%);
+
+    --clr-primary-v-light: hsl(215, 11%, 70%);
+    --clr-primary-light: hsl(212, 12%, 51%);
+    --clr-primary: hsl(219, 18%, 34%);
+    
+    --transition: all .3s;
+}
+/*=================
+Global Styles
+=================*/
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: var(--clr-white);
+    font-size: 0.1825rem;
+    line-height: 1.5;
+}
+img{
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+}
+h1,h2,h3{
+    font-family: var(--ff-accent);
+    line-height: 1.1;
+}
+/*=================
+Utility Classes
+=================*/
+.container{
+    width: min(85vw, 70.5rem);
+}
