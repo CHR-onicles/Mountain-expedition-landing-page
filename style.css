@@ -15,6 +15,7 @@ Custom Properties
     --clr-primary: hsl(219, 18%, 34%);
     
     --transition: all .3s;
+    --radius: 10px;
 }
 /*=================
 Global Styles
@@ -26,7 +27,6 @@ Global Styles
 }
 body{
     background: var(--clr-white);
-    font-size: 0.1825rem;
     line-height: 1.5;
 }
 img{
@@ -44,4 +44,93 @@ Utility Classes
 =================*/
 .container{
     width: min(85vw, 70.5rem);
+    margin: 0 auto;
+}
+.row{
+    display: flex;
+}
+/*=================
+Animations
+=================*/
+@keyframes fade-in {
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+/*=================
+Main Header
+=================*/
+.header{
+    background: linear-gradient(to top, hsla(0,0%,0%,.6), hsla(0,0%,0%,.1)),
+        url("./assets/images/mobile/hero.webp") no-repeat center /cover;
+    min-height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header__nav-list-container{
+    display: none;
+}
+.header__banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.header__banner-logo{
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
+}
+.header__banner-text-wrapper{
+    text-align: center;
+}
+.header__heading{
+    font-size: 2.5rem;
+    opacity: 0;
+    margin-top: 2rem;
+    transform: translateX(-20px);
+    animation: fade-in 1s ease-out forwards 1s;
+}
+.header__intro-text{
+    font-family: var(--ff-primary);
+    font-size: 0.8125rem;
+    font-style: italic;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-in 1s ease-out forwards 2s;
+    margin-top: 1.5rem;
+
+}
+/*=================
+About Us Section
+=================*/
+.about{
+    margin-top: 4.5rem;
+    position: relative;
+}
+.about::before{
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 90px;
+    width: 4px;
+    background: var(--clr-black)
+}
+.about__heading{
+    padding-top: .6rem;
+    text-align: center;
+    font-weight: 700;
+    /* transform: translateX(-10px); */
+    /* opacity: 0; */
+    /* animation: fade-in 1s ease-out forwards; */
 }

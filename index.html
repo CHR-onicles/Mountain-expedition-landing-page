@@ -12,17 +12,42 @@
         <!-- CSS -->
         <link rel="stylesheet" href="style.css" />
         <!-- Javascript -->
-        <script src="./script.js"></script>
+        <script src="./script.js" defer></script>
     </head>
     <body>
         <header class="header">
             <nav class="header__main-nav">
-    
+                <div class="header__nav-content">
+                    <div class="header__nav-header">
+
+                    </div>
+                    <div class="header__nav-list-container">
+                        <ul class="header__nav-list">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Activities</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
 
             <div class="header__banner">
-                
+                <div class="container header__banner-text-wrapper">
+                    <img src="./assets/logos/mountain-logo-white.png" class="header__banner-logo" alt="">
+                    <h1 class="header__heading">Welcome to Mountain Expeditions Club!</h1>
+                    <p class="header__intro-text">Overseers Expeditions, Mountain Challenges, Private Guiding & Instructing</p>
+                </div>
             </div>
         </header>
+        
+        <section class="about">
+            <div class="container">
+                <h2 class="about__heading">About Us</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, corporis!</p>
+            </div>
+
+        </section>
     </body>
 </html>
