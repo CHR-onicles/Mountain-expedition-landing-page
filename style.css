@@ -205,7 +205,7 @@ Leader Section
     top: 20%;
     left: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: url("./assets/images/mobile/expedition.png") center / cover no-repeat;
     filter: saturate(150%);
     z-index: -3;
@@ -216,7 +216,7 @@ Leader Section
     top: 20%;
     left: 0;
     width: 100%;
-    height: 300px;
+    min-height: 300px;
     background: url("./assets/images/cloud2.png") center / cover repeat;
     background-size: 200% 100%;
     z-index: -1;
@@ -230,24 +230,16 @@ Activities Section
 =================*/
 .activities {
     position: relative;
-    color: white;
-    padding-top: 4rem;
-    text-align: center;
-}
-.activities::before{
-    content: "";
-    position: absolute;
-    top: -100px;
-    left: 0;
+    padding: 13rem 0 8rem 0;
+    margin-top: -6.5rem;
     width: 100%;
-    height: 110rem;
+    color: white;
+    text-align: center;
+    /* min-height: 110rem; */
     background: linear-gradient(90deg, hsla(220, 25%, 16%, .8), hsla(220, 25%, 16%, .8)),
     url("./assets/images/mobile/snowfield.webp") center /cover no-repeat;
     clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
     z-index: -1;
-}
-.activities::after{
-
 }
 .activities .row {
     display: block;
@@ -267,7 +259,7 @@ Activities Section
 }
 .activities__img-wrapper {
     width: min(100%, 300px);
-    height: 300px;
+    min-height: 300px;
     border-radius: var(--radius);
     overflow: hidden;
     margin: 0 auto;
@@ -276,6 +268,57 @@ Activities Section
     background: var(--clr-primary-light);
     text-transform: uppercase;
     margin-bottom: 0;
+}
+/*=================
+Statistics Section
+=================*/
+.statistics{
+text-align: center;
+margin-top: 2em;
+}
+.statistics__heading{
+    font-size: 2rem;
+}
+.statistics__sub-heading{
+    font-family: var(--ff-primary);
+    font-weight: 400;
+    font-size: 0.8125rem;
+    margin-top: 1em;
+    letter-spacing: 5px;
+}
+.statistics .row{
+    display: block;
+}
+.statistics__card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    border: 2px dashed var(--clr-primary);
+    padding: .5em 0;
+    margin: 1em auto;
+    width: 200px;
+    height: 200px;
+    font-family: var(--ff-primary);
+    color: var(--clr-primary);
+    text-align: center;
+    border-radius: var(--radius);
+}
+.statistics__icon{
+    display: block;
+    width: 50px;
+    stroke: var(--clr-primary);
+}
+.statistics__number{
+    display: block;
+    font-size: 4rem;
+    font-family: var(--ff-accent);
+    color: var(--clr-black);
+}
+.statistics__desc{
+    display: inline-block;
+    font-size: 1rem;
+    /* font-weight: 300; */
 }
 /*=================
 Footer
