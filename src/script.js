@@ -7,6 +7,7 @@ const counter_cards = document.querySelectorAll(".statistics__card");
 const faders = document.querySelectorAll(".fade");
 const back_to_top = document.querySelector(".back-to-top-btn");
 const banner_elements = document.querySelectorAll(".banner");
+const search = document.querySelector(".header__search");
 
 setTimeout(() => {
     banner_elements.forEach((el) => {
@@ -17,6 +18,9 @@ setTimeout(() => {
 nav_btn.addEventListener("click", () => {
     nav_container.classList.toggle("nav-active");
     header.classList.toggle("nav-active");
+    if (!header.classList.contains("nav-active")){
+        search.value = '';
+    }
     body.classList.toggle("no-scroll");
 });
 
