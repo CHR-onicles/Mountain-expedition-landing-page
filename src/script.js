@@ -23,37 +23,35 @@ nav_btn.addEventListener("click", () => {
 /* Observer for fading elements */
 const fadeObserverOptions = {
     rootMargin: "0px",
-    threshold: 0.3
-}
+    threshold: 0.3,
+};
 
 const fadeObserver = new IntersectionObserver((entries, fadeObserver) => {
     entries.forEach((entry) => {
-        if (entry.target.classList[0].includes("header__")){
+        if (entry.target.classList[0].includes("header__")) {
             setTimeout(() => {
-                
                 entry.target.classList.add("appear");
             }, 2000);
             console.log(entry.target.classList);
         }
-        if (!entry.isIntersecting){
+        if (!entry.isIntersecting) {
             entry.target.classList.remove("appear");
         } else {
             entry.target.classList.add("appear");
             fadeObserver.unobserve(entry.target);
         }
-
     });
 }, fadeObserverOptions);
 
 faders.forEach((fader) => {
     fadeObserver.observe(fader);
-})
+});
 /* End Observer for fading elements */
 
 /* Observer for Counters */
 const counterObserverOptions = {
     rootMargin: "0px",
-    threshold: 0.4,
+    threshold: 0.5,
 };
 
 const counterObserver = new IntersectionObserver((entries, counterObserver) => {
@@ -63,7 +61,7 @@ const counterObserver = new IntersectionObserver((entries, counterObserver) => {
         } else {
             const stats_number_el = entry.target.children[1];
             stats_number_el.innerText = "0";
-            
+
             const updateStatsNumber = () => {
                 const target = +stats_number_el.getAttribute("data-target"); // + symbol converts string to Number
                 const text = +stats_number_el.innerText;
@@ -74,8 +72,8 @@ const counterObserver = new IntersectionObserver((entries, counterObserver) => {
                 } else {
                     stats_number_el.innerText = target;
                 }
-            }
-            
+            };
+
             updateStatsNumber();
             counterObserver.unobserve(entry.target);
         }
@@ -87,21 +85,20 @@ counter_cards.forEach((card) => {
 });
 /* End Observer for Counters */
 
-
 /* Observer for Back To Top button */
 const BackToTopObserverOptions = {
     rootMargin: "0px",
-    threshold: 0
-}
+    threshold: 0,
+};
 
 const BackToTopObserver = new IntersectionObserver((entries, BackToTopObserver) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting){
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
             back_to_top.classList.add("active");
         } else {
             back_to_top.classList.remove("active");
         }
-    })
+    });
 }, BackToTopObserverOptions);
 
 BackToTopObserver.observe(header);

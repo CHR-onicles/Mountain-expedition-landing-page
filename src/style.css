@@ -35,6 +35,7 @@ body {
     background: hsl(220, 6%, 95%);
     line-height: 1.5;
     position: relative;
+    overflow-x: hidden;
 }
 img {
     max-width: 100%;
@@ -80,20 +81,20 @@ Utility Classes
 .fade-in-bottom {
     transform: translateY(20px);
 }
-.delay-p5 {
-    transition-delay: 0.5s;
+.delay-p3 {
+    transition-delay: 0.3s;
 }
 .delay-p4 {
     transition-delay: 0.4s;
 }
-.delay-p3 {
-    transition-delay: 0.3s;
+.delay-p5 {
+    transition-delay: 0.5s;
 }
 .delay-1 {
     transition-delay: 1s;
 }
-.delay-2p5{
-    transition-delay: 2.5s;
+.delay-1p5{
+    transition-delay: 1.5s;
 }
 .delay-2 {
     transition-delay: 2s;
@@ -167,18 +168,23 @@ Main Header
 .header__nav-list-container {
     position: absolute;
     top: 3rem;
-    right: 2.5rem;
-    width: min(80%, 270px);
-    z-index: 9;
-    clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
-    transform: scale(0);
+    left: 5.3rem;
+    width: 0;
+    /* clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%); */
+    transform:  scale(0);
     opacity: 0;
-    transform-origin: top right;
+    transform-origin: left;
     transition: transform 0.4s ease, opacity 0.4s;
+}
+.header.nav-active .header__nav-list-container{
+    width: min(80%, 270px);
+    opacity: 1;
+    transform: translateX(100%) scale(1);
 }
 .header__nav-list {
     list-style-type: none;
     background: var(--clr-primary);
+    border-radius: var(--radius);
     padding: 2em;
 }
 .header__nav-list-item {
