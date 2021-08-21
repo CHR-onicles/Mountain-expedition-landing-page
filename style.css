@@ -31,6 +31,7 @@ body {
     font-family: var(--ff-primary);
     background: hsl(220, 6%, 95%);
     line-height: 1.5;
+    position: relative;
 }
 img {
     max-width: 100%;
@@ -75,9 +76,7 @@ Animations
 Main Header
 =================*/
 .header {
-    background: linear-gradient(to top, hsla(220, 15%, 16%, 0.6), hsla(220, 15%, 16%, 0.1)), url("./assets/images/mobile/hero.webp") no-repeat center / cover;
     min-height: 100vh;
-    clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
     color: white;
     display: flex;
     justify-content: center;
@@ -85,18 +84,31 @@ Main Header
     transform: translateX(0);
     transition: transform .5s;
 }
+.header::before{
+    background: linear-gradient(to top, hsla(220, 15%, 16%, 0.6), hsla(220, 15%, 16%, 0.1)), url("./assets/images/mobile/hero.webp") no-repeat center / cover;
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+    overflow: hidden;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 .header__toggle-btn {
-    /* background: none; */
-    /* border: none; */
+    background: none;
+    border: none;
     position: fixed;
     top: 1rem;
     right: 1rem;
     transform: translateX(0);
-    transition: transform .7s;
+    transition: transform .6s;
 }
 .header__toggle-icon {
     width: 30px;
     stroke: white;
+    transition: stroke .6s;
 }
 .header__nav-list-container {
     position: absolute;
@@ -144,7 +156,7 @@ Main Header
 .header.active .header__toggle-icon .line1{
     transform: translate(30%, -13%) rotateZ(41deg);
 }
-.header.active  .header__toggle-icon .line2{
+.header.active .header__toggle-icon .line2{
     width: 0;
     opacity: 0;
 }
