@@ -55,6 +55,9 @@ Utility Classes
 .row {
     display: flex;
 }
+.no-scroll{
+    overflow: hidden;
+}
 /*=================
 Animations
 =================*/
@@ -82,7 +85,7 @@ Main Header
     justify-content: center;
     align-items: center;
     transform: translateX(0);
-    transition: transform .5s;
+    transition: transform .6s;
 }
 .header::before{
     background: linear-gradient(to top, hsla(220, 15%, 16%, 0.6), hsla(220, 15%, 16%, 0.1)), url("./assets/images/mobile/hero.webp") no-repeat center / cover;
@@ -106,7 +109,7 @@ Main Header
     transition: transform .6s;
 }
 .header__toggle-icon {
-    width: 30px;
+    width: 35px;
     stroke: white;
     transition: stroke .6s;
 }
@@ -134,13 +137,13 @@ Main Header
 .header__nav-list-item a{
     color: white;
 }
-.header.active{
+.header.nav-active{
     transform: translateX(-100%);
 }
-.header.active .header__toggle-btn{
+.header.nav-active .header__toggle-btn{
     transform: translateX(calc(100% + 2rem));
 }
-.header.active .header__toggle-icon{
+.header.nav-active .header__toggle-icon{
     stroke: var(--clr-primary);
 }
 .header__toggle-icon .line1, .line2, .line3{
@@ -153,20 +156,21 @@ Main Header
 .line3{
     transform-origin: left bottom;
 }
-.header.active .header__toggle-icon .line1{
+.header.nav-active .header__toggle-icon .line1{
     transform: translate(30%, -13%) rotateZ(41deg);
 }
-.header.active .header__toggle-icon .line2{
+.header.nav-active .header__toggle-icon .line2{
     width: 0;
     opacity: 0;
 }
-.header.active .header__toggle-icon .line3{
+.header.nav-active .header__toggle-icon .line3{
     transform: translate(30%, 0%) rotateZ(-41deg);
 }
-.header__nav-list-container.active{
+.header__nav-list-container.nav-active{
     /* transform: scale(1); */
     /* opacity: 1; */
 }
+
 
 .header__banner {
     display: flex;
@@ -219,6 +223,10 @@ About Us Section
     height: 90px;
     width: 4px;
     background: var(--clr-black);
+    transition: opacity .6s;
+}
+#body.no-scroll .about::before{
+    opacity: 0;
 }
 .about__heading {
     padding-top: 0.6em;
@@ -234,8 +242,8 @@ About Us Section
     color: var(--clr-black);
 }
 .about__text {
-    margin-top: 0.8em;
-    width: (90%, 30ch);
+    margin: 0.8em auto 0 auto;
+    width: min(90%, 45ch);
 }
 .about__about-btn,
 .activities__btn {
@@ -298,7 +306,8 @@ Leader Section
     animation: clouds 120s linear infinite;
 }
 .leaders__text {
-    margin-top: 1rem;
+    margin: 1rem auto 0 auto;
+    max-width: 50ch;
 }
 /*=================
 Activities Section
@@ -325,10 +334,12 @@ Activities Section
 }
 .activities__card-heading{
     font-size: 1.5rem;
+    padding-top: .5em;
 }
 .activities__card-excerpt{
-    margin-top: 1rem;
+    margin: .8rem auto 0 auto;
     font-size: 0.8125rem;
+    max-width: 45ch;
 }
 .activities__img-wrapper {
     width: min(100%, 300px);
@@ -419,25 +430,26 @@ Contact Us Section
 .contact-us__name-input,
 .contact-us__email-input,
 .contact-us__message-input{
+    --clr-primary-v-light: hsla(215, 11%, 70%, .8);
     display: block;
     background: none;
-    border: 1px solid var(--clr-primary-v-light);
-    border-right-color: hsla(220, 6%, 90%, .2);
-    border-bottom-color: hsla(220, 6%, 90%, .3);
-    border-radius: var(--radius);
+    padding: .6em;
     outline: none;
     width: min(100%, 350px);
     margin: 1em auto 0 auto;
+    border: 1px solid var(--clr-primary-v-light);
+    border-right-color: hsla(220, 6%, 90%, .2);
+    border-bottom-color: hsla(220, 6%, 90%, .2);
+    border-radius: var(--radius);
     font-family: inherit;
     font-size: 1rem;
-    color: var(--clr-white);
-    padding: .6em;
+    color: white;
     backdrop-filter: blur(1px);
 }
 .contact-us__name-input::placeholder,
 .contact-us__email-input::placeholder,
 .contact-us__message-input::placeholder{
-    color: var(--clr-primary-v-light)
+    color: var(--clr-primary-v-light);
 }
 .contact-us__submit-btn{
     display: block;
