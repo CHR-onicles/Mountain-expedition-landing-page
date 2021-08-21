@@ -4,6 +4,8 @@ const nav_container = document.querySelector(".header__nav-list-container");
 const body = document.getElementById("body");
 const counters = document.querySelectorAll(".statistics__number");
 const counter_cards = document.querySelectorAll(".statistics__card");
+const faders = document.querySelectorAll(".fade");
+const back_to_top = document.querySelector(".back-to-top-btn");
 
 nav_btn.addEventListener("click", () => {
     nav_container.classList.toggle("nav-active");
@@ -11,6 +13,30 @@ nav_btn.addEventListener("click", () => {
     body.classList.toggle("no-scroll");
 });
 
+/* Observer for fading elements */
+const fadeObserverOptions = {
+    rootMargin: "0px",
+    threshold: 0.3
+}
+
+const fadeObserver = new IntersectionObserver((entries, fadeObserver) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting){
+            entry.target.classList.remove("appear");
+        } else {
+            entry.target.classList.add("appear");
+            fadeObserver.unobserve(entry.target);
+        }
+
+    });
+}, fadeObserverOptions);
+
+faders.forEach((fader) => {
+    fadeObserver.observe(fader);
+})
+/* End Observer for fading elements */
+
+/* Observer for Counters */
 const counterObserverOptions = {
     rootMargin: "0px",
     threshold: 0.4,
@@ -21,10 +47,9 @@ const counterObserver = new IntersectionObserver((entries, counterObserver) => {
         if (!entry.isIntersecting) {
             return;
         } else {
-            console.log(entry.target.children[1]);
             const stats_number_el = entry.target.children[1];
             stats_number_el.innerText = "0";
-
+            
             const updateStatsNumber = () => {
                 const target = +stats_number_el.getAttribute("data-target"); // + symbol converts string to Number
                 const text = +stats_number_el.innerText;
@@ -36,7 +61,7 @@ const counterObserver = new IntersectionObserver((entries, counterObserver) => {
                     stats_number_el.innerText = target;
                 }
             }
-
+            
             updateStatsNumber();
             counterObserver.unobserve(entry.target);
         }
@@ -46,3 +71,24 @@ const counterObserver = new IntersectionObserver((entries, counterObserver) => {
 counter_cards.forEach((card) => {
     counterObserver.observe(card);
 });
+/* End Observer for Counters */
+
+
+/* Observer for Back To Top button */
+const BackToTopObserverOptions = {
+    rootMargin: "0px",
+    threshold: 0
+}
+
+const BackToTopObserver = new IntersectionObserver((entries, BackToTopObserver) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting){
+            back_to_top.classList.add("active");
+        } else {
+            back_to_top.classList.remove("active");
+        }
+    })
+}, BackToTopObserverOptions);
+
+BackToTopObserver.observe(header);
+/* End Observer for Back To Top button */

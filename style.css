@@ -27,6 +27,9 @@ Global Styles
     margin: 0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: var(--ff-primary);
     background: hsl(220, 6%, 95%);
@@ -58,15 +61,53 @@ Utility Classes
 .no-scroll{
     overflow: hidden;
 }
+.fade-in-left,
+.fade-in-right,
+.fade-in-top,
+.fade-in-bottom{
+    opacity: 0;
+    transition: transform .4s, opacity .4s;
+}
+.fade-in-left{
+    transform: translateX(-20px);
+}
+.fade-in-right{
+    transform: translateX(20px);
+}
+.fade-in-top{
+    transform: translateY(-20px);
+}
+.fade-in-bottom{
+    transform: translateY(20px);
+}
+.delay-p5{
+    transition-delay: .5s;
+}
+.delay-p4{
+    transition-delay: .4s;
+}
+.delay-p3{
+    transition-delay: .3s;
+}
+.delay-1{
+    transition-delay: 1s;
+}
+.delay-2{
+    transition-delay: 2s;
+}
+.appear{
+    opacity: 1;
+    transform: translate(0);
+}
 /*=================
 Animations
 =================*/
-@keyframes fade-in {
-    to {
+/* @keyframes fade-in { */
+    /* to {
         opacity: 1;
         transform: translate(0);
     }
-}
+} */
 @keyframes clouds {
     from {
         background-position: 50% 0%;
@@ -166,10 +207,9 @@ Main Header
 .header.nav-active .header__toggle-icon .line3{
     transform: translate(30%, 0%) rotateZ(-41deg);
 }
-.header__nav-list-container.nav-active{
-    /* transform: scale(1); */
-    /* opacity: 1; */
-}
+/* .header__nav-list-container.nav-active{ */
+
+/* } */
 
 
 .header__banner {
@@ -183,28 +223,43 @@ Main Header
     display: block;
     width: 150px;
     margin: 0 auto;
-    transform: translateY(-20px);
-    opacity: 0;
-    animation: fade-in 1s ease-out forwards;
 }
 .header__banner-text-wrapper {
     text-align: center;
 }
 .header__heading {
     font-size: 2.5rem;
-    opacity: 0;
     margin-top: 2rem;
-    transform: translateX(-20px);
-    animation: fade-in 1s ease-out forwards 1s;
 }
 .header__intro-text {
+    margin-top: 1.5rem;
     font-family: var(--ff-primary);
     font-size: 0.8125rem;
     font-style: italic;
+}
+.back-to-top-btn{
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    position: fixed;
+    bottom: .6rem;
+    right: .6rem;
+    width: 40px;
+    height: 40px;
+    background: var(--clr-black);
+    border-radius: 50%;
+    z-index: 99;
     opacity: 0;
-    transform: translateY(20px);
-    animation: fade-in 1s ease-out forwards 2s;
-    margin-top: 1.5rem;
+    transform: translateY(10px);
+    transition: transform .4s, opacity .4s;
+}
+.back-to-top-btn.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+.back-to-top-icon{
+    fill: var(--clr-white);
+    width: 30px;
 }
 /*=================
 About Us Section
