@@ -6,6 +6,13 @@ const counters = document.querySelectorAll(".statistics__number");
 const counter_cards = document.querySelectorAll(".statistics__card");
 const faders = document.querySelectorAll(".fade");
 const back_to_top = document.querySelector(".back-to-top-btn");
+const banner_elements = document.querySelectorAll(".banner");
+
+setTimeout(() => {
+    banner_elements.forEach((el) => {
+        el.classList.add("appear");
+    });
+}, 2000);
 
 nav_btn.addEventListener("click", () => {
     nav_container.classList.toggle("nav-active");
@@ -21,6 +28,13 @@ const fadeObserverOptions = {
 
 const fadeObserver = new IntersectionObserver((entries, fadeObserver) => {
     entries.forEach((entry) => {
+        if (entry.target.classList[0].includes("header__")){
+            setTimeout(() => {
+                
+                entry.target.classList.add("appear");
+            }, 2000);
+            console.log(entry.target.classList);
+        }
         if (!entry.isIntersecting){
             entry.target.classList.remove("appear");
         } else {
