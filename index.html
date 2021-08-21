@@ -21,15 +21,15 @@
             <nav class="header__main-nav">
                 <div class="header__nav-content">
                     <button type="button" class="header__toggle-btn">
-                        <svg class="header__toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>ionicons-v5-j</title><line x1="80" y1="160" x2="432" y2="160" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/><line x1="80" y1="256" x2="432" y2="256" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/><line x1="80" y1="352" x2="432" y2="352" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/></svg>
+                        <svg class="header__toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>ionicons-v5-j</title><line class="line1" x1="80" y1="160" x2="432" y2="160" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/><line class="line2" x1="80" y1="256" x2="432" y2="256" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/><line class="line3" x1="80" y1="352" x2="432" y2="352" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/></svg>
                     </button>
                     <div class="header__nav-list-container">
                         <ul class="header__nav-list">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Activities</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li class="header__nav-list-item"><a href="#">Home</a></li>
+                            <li class="header__nav-list-item"><a href="#">About Us</a></li>
+                            <li class="header__nav-list-item"><a href="#">Destinations</a></li>
+                            <li class="header__nav-list-item"><a href="#">Blog</a></li>
+                            <li class="header__nav-list-item"><a href="#">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -54,10 +54,10 @@
                         <p class="about__text"><strong>Mountain Expedition</strong> is a fast growing Swiss-based group founded
                             by an extraterrestrial. Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quas.
                         </p>
-                        <p class="about__text"><strong>Lorem ipsum</strong> dolor, sit amet consectetur adipisicing elit. Inventore delectus aliquid, similique error ratione nisi.</p>
+                        <p class="about__text">Our work <strong>culture</strong> is second to none dolor, sit amet consectetur adipisicing elit. Inventore delectus aliquid, similique error ratione nisi.</p>
                     </div>
                     <div class="col">
-                        <p class="about__text"><strong>Lorem ipsum</strong> dolor sit amet consectetur adipisicing elit. Rem itaque nostrum quod iusto! Sint amet adipisci modi voluptatum iste qui. Maxime ex temporibus vitae praesentium dolorum quas sed inventore dolore?</p>
+                        <p class="about__text">We <strong>prioritize</strong> customer satisfaction dolor sit amet consectetur adipisicing elit. Rem itaque nostrum quod iusto! Sint amet adipisci modi voluptatum iste qui. Maxime ex temporibus vitae praesentium dolorum quas sed inventore dolore?</p>
                         <a href="#" class="about__about-btn">Read More</a>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
         </section>
         <!-- End Activities Section -->
 
-        <!-- Statistics -->
+        <!-- Statistics Section -->
         <section class="statistics">
             <div class="container">
                 <h2 class="statistics__heading">Statistics</h>
@@ -122,28 +122,52 @@
                         <span class="statistics__desc">Active tours</span>
                     </article>
                     <article class="statistics__card">
-                        <svg class="statistics__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>ionicons-v5-p</title><polyline points="48 320 112 320 176 64 240 448 304 224 336 320 400 320" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><circle cx="432" cy="320" r="32" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+                        <svg class="statistics__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>ionicons-v5-p</title><path d="M402,168c-2.93,40.67-33.1,72-66,72s-63.12-31.32-66-72c-3-42.31,26.37-72,66-72S405,126.46,402,168Z" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><path d="M336,304c-65.17,0-127.84,32.37-143.54,95.41-2.08,8.34,3.15,16.59,11.72,16.59H467.83c8.57,0,13.77-8.25,11.72-16.59C463.85,335.36,401.18,304,336,304Z" style="fill:none;stroke-miterlimit:10;stroke-width:32px"/><path d="M200,185.94C197.66,218.42,173.28,244,147,244S96.3,218.43,94,185.94C91.61,152.15,115.34,128,147,128S202.39,152.77,200,185.94Z" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><path d="M206,306c-18.05-8.27-37.93-11.45-59-11.45-52,0-102.1,25.85-114.65,76.2C30.7,377.41,34.88,384,41.72,384H154" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/></svg>
                         <span class="statistics__number">200+</span>
                         <span class="statistics__desc">Tour guides</span>
                     </article>
                     <article class="statistics__card">
-                        <svg class="statistics__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>ionicons-v5-p</title><polyline points="48 320 112 320 176 64 240 448 304 224 336 320 400 320" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><circle cx="432" cy="320" r="32" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+                        <svg class="statistics__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>ionicons-v5-p</title><circle cx="184" cy="232" r="24"/><path d="M256.05,384c-45.42,0-83.62-29.53-95.71-69.83A8,8,0,0,1,168.16,304H343.85a8,8,0,0,1,7.82,10.17C339.68,354.47,301.47,384,256.05,384Z"/><circle cx="328" cy="232" r="24"/><circle cx="256" cy="256" r="208" style="fill:none;stroke-miterlimit:10;stroke-width:32px"/></svg>
                         <span class="statistics__number">650+</span>
                         <span class="statistics__desc">Happy clients</span>
                     </article>
                     <article class="statistics__card">
-                        <svg class="statistics__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>ionicons-v5-p</title><polyline points="48 320 112 320 176 64 240 448 304 224 336 320 400 320" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><circle cx="432" cy="320" r="32" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+                        <svg class="statistics__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>ionicons-v5-p</title><line x1="48" y1="256" x2="464" y2="256" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><rect x="384" y="128" width="32" height="256" rx="16" ry="16" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><rect x="96" y="128" width="32" height="256" rx="16" ry="16" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><rect x="32" y="192" width="16" height="128" rx="8" ry="8" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><rect x="464" y="192" width="16" height="128" rx="8" ry="8" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
                         <span class="statistics__number">7</span>
                         <span class="statistics__desc">Years of Experience</span>
                     </article>
                 </div>
             </div>
         </section>
-        <!-- End Statistics -->
+        <!-- End Statistics Section -->
+
+        <!-- Contact Us Section -->
+        <section class="contact-us">
+            <div class="container">
+                <h2 class="contact-us__heading">Reach out to us!</h2>
+                <input class="contact-us__name-input" type="text"  placeholder="Enter your name">
+                <input class="contact-us__email-input" type="email" placeholder="Enter your email">
+                <textarea class="contact-us__message-input" cols="30" rows="10" placeholder="Enter your message"></textarea>
+                <button class="contact-us__submit-btn" type="button">Submit</button>
+            </div>
+        </section>
+        <!-- End Contact Us Section -->
         
         <!-- Footer -->
         <footer class="footer">
-            <!-- <p>Lorem, ipsum dolor.</p> -->
+            <div class="container">
+                <img class="footer__logo" src="./assets/logos/mountain-logo-white.png" alt="Mountain logo">
+                <ul class="footer__nav-list">
+                            <li class="footer__nav-list-item"><a href="#">Home</a></li>
+                            <li class="footer__nav-list-item"><a href="#">About Us</a></li>
+                            <li class="footer__nav-list-item"><a href="#">Destinations</a></li>
+                            <li class="footer__nav-list-item"><a href="#">Blog</a></li>
+                            <li class="footer__nav-list-item"><a href="#">Contact</a></li>
+                        </ul>
+                <p class="footer__copyright">Copyright &copy; 2021 Mountain Expeditions Club.</p>
+                <p class="footer__copyright">All rights reserved.</p>
+                <p class="footer__developer">Developed by <a href="https://github.com/CHR-onicles">Divine Anum.</a></p>
+            </div>
         </footer>
         <!-- End Footer -->
 

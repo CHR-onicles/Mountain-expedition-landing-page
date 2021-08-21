@@ -1,3 +1,7 @@
-/* https://stackoverflow.com/questions/27462306/css3-animate-elements-if-visible-in-viewport-page-scroll
-To start aniamtion of an element when in viewport
-*/
+const nav_btn = document.querySelector(".header__toggle-btn");
+const header = document.querySelector(".header")
+const nav_container = document.querySelector(".header__nav-list-container");
+nav_btn.addEventListener("click", () => {
+    nav_container.classList.toggle("active");
+    header.classList.toggle("active");
+})

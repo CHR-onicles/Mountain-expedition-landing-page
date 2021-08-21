@@ -82,20 +82,80 @@ Main Header
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateX(0);
+    transition: transform .5s;
 }
 .header__toggle-btn {
-    background: none;
-    border: none;
+    /* background: none; */
+    /* border: none; */
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    transform: translateX(0);
+    transition: transform .7s;
 }
 .header__toggle-icon {
     width: 30px;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    stroke: white;
 }
 .header__nav-list-container {
-    display: none;
+    position: absolute;
+    top: 3rem;
+    right: 2.5rem;
+    width: min(80%, 270px);
+    z-index: 9;
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+    transform: scale(0);
+    opacity: 0;
+    transform-origin: top right;
+    transition: transform .4s ease,
+    opacity .4s;
 }
+.header__nav-list{
+    list-style-type: none;
+    background: var(--clr-primary);
+    padding: 2em;
+}
+.header__nav-list-item{
+    padding: .5em 0;
+}
+.header__nav-list-item a{
+    color: white;
+}
+.header.active{
+    transform: translateX(-100%);
+}
+.header.active .header__toggle-btn{
+    transform: translateX(calc(100% + 2rem));
+}
+.header.active .header__toggle-icon{
+    stroke: var(--clr-primary);
+}
+.header__toggle-icon .line1, .line2, .line3{
+    transform: rotateZ(0deg);
+    transition: transform .5s ease;
+}
+.line1{
+    transform-origin: left top;
+}
+.line3{
+    transform-origin: left bottom;
+}
+.header.active .header__toggle-icon .line1{
+    transform: translate(30%, -13%) rotateZ(41deg);
+}
+.header.active  .header__toggle-icon .line2{
+    width: 0;
+    opacity: 0;
+}
+.header.active .header__toggle-icon .line3{
+    transform: translate(30%, 0%) rotateZ(-41deg);
+}
+.header__nav-list-container.active{
+    /* transform: scale(1); */
+    /* opacity: 1; */
+}
+
 .header__banner {
     display: flex;
     flex-direction: column;
@@ -193,11 +253,14 @@ Leader Section
 }
 .leaders__logo {
     margin-top: 6em;
+    opacity: 0;
 }
 .leaders__heading {
+    --clr-black: hsla(220, 15%, 16%, 0.4);
+
     margin-top: 0.5em;
     font-size: 2rem;
-    text-shadow: 0 0 10px hsla(220, 15%, 16%, 0.4), 0 0 20px hsla(220, 15%, 16%, 0.4), 0 0 50px hsla(220, 15%, 16%, 0.3);
+    text-shadow: 0 0 10px var(--clr-black), 0 0 20px var(--clr-black), 0 0 50px var(--clr-black);
 }
 .leaders::before {
     content: "";
@@ -229,14 +292,15 @@ Leader Section
 Activities Section
 =================*/
 .activities {
+    --clr-black: hsla(220, 25%, 16%, .8);
+
     position: relative;
     padding: 13rem 0 8rem 0;
     margin-top: -6.5rem;
     width: 100%;
     color: white;
     text-align: center;
-    /* min-height: 110rem; */
-    background: linear-gradient(90deg, hsla(220, 25%, 16%, .8), hsla(220, 25%, 16%, .8)),
+    background: linear-gradient(90deg, var(--clr-black), var(--clr-black)),
     url("./assets/images/mobile/snowfield.webp") center /cover no-repeat;
     clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
     z-index: -1;
@@ -244,14 +308,11 @@ Activities Section
 .activities .row {
     display: block;
 }
-.activities__card{
-}
 .activities__card + .activities__card{
-    margin-top: 2.5rem;
+    margin-top: 4rem;
 }
 .activities__card-heading{
     font-size: 1.5rem;
-    margin-top: 1.4rem;
 }
 .activities__card-excerpt{
     margin-top: 1rem;
@@ -278,6 +339,7 @@ margin-top: 2em;
 }
 .statistics__heading{
     font-size: 2rem;
+    color: var(--clr-black);
 }
 .statistics__sub-heading{
     font-family: var(--ff-primary);
@@ -285,6 +347,7 @@ margin-top: 2em;
     font-size: 0.8125rem;
     margin-top: 1em;
     letter-spacing: 5px;
+    color: var(--clr-gray);
 }
 .statistics .row{
     display: block;
@@ -304,14 +367,19 @@ margin-top: 2em;
     text-align: center;
     border-radius: var(--radius);
 }
+.statistics__icon,
+.statistics__icon *{
+    stroke: var(--clr-primary);
+    fill: var(--clr-primary);
+}
 .statistics__icon{
     display: block;
     width: 50px;
-    stroke: var(--clr-primary);
 }
+
 .statistics__number{
     display: block;
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: var(--ff-accent);
     color: var(--clr-black);
 }
@@ -321,5 +389,87 @@ margin-top: 2em;
     /* font-weight: 300; */
 }
 /*=================
+Contact Us Section
+=================*/
+.contact-us{
+    --clr-black: hsla(220, 15%, 16%, 0.8);
+    background: linear-gradient(var(--clr-black), var(--clr-black)),
+    url("./assets/images/mobile/mountain-valley.webp") center / cover no-repeat;
+    margin-top: 8rem;
+    padding: 4rem 0;
+}
+.contact-us__heading{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    padding-bottom: .6em;
+}
+.contact-us__name-input,
+.contact-us__email-input,
+.contact-us__message-input{
+    display: block;
+    background: none;
+    border: 1px solid var(--clr-primary-v-light);
+    border-right-color: hsla(220, 6%, 90%, .2);
+    border-bottom-color: hsla(220, 6%, 90%, .3);
+    border-radius: var(--radius);
+    outline: none;
+    width: min(100%, 350px);
+    margin: 1em auto 0 auto;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--clr-white);
+    padding: .6em;
+    backdrop-filter: blur(1px);
+}
+.contact-us__name-input::placeholder,
+.contact-us__email-input::placeholder,
+.contact-us__message-input::placeholder{
+    color: var(--clr-primary-v-light)
+}
+.contact-us__submit-btn{
+    display: block;
+    background: transparent;
+    margin: 1.5em auto;
+    padding: .8em 3em;
+    border: 2px solid var(--clr-primary-v-light);
+    border-radius: var(--radius);
+    font-family: inherit;
+    text-transform: uppercase;
+    color: white;
+}
+/*=================
 Footer
 =================*/
+.footer{
+    padding: 4rem 0 2rem 0;
+    background: var(--clr-primary);
+    color: var(--clr-white);
+}
+.footer__logo{
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+.footer__nav-list{
+    list-style-type: none;
+    margin: 1rem auto;
+}
+.footer__nav-list-item{
+    text-align: center;
+    padding: .5rem 0;
+}
+.footer__nav-list-item a{
+    color: var(--clr-white);
+}
+.footer__copyright,
+.footer__developer{
+    font-size: 0.8125rem;
+    text-align: center;
+}
+.footer__developer{
+    padding-top: 1em;
+}
+.footer__developer a{
+    color: white;
+}
