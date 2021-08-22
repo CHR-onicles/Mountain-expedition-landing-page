@@ -9,6 +9,9 @@ const back_to_top = document.querySelector(".back-to-top-btn");
 const banner_elements = document.querySelectorAll(".banner");
 const search = document.querySelector(".header__search");
 
+const no_motion_media_query = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+
 setTimeout(() => {
     banner_elements.forEach((el) => {
         el.classList.add("appear");
@@ -60,6 +63,12 @@ const counterObserverOptions = {
 
 const counterObserver = new IntersectionObserver((entries, counterObserver) => {
     entries.forEach((entry) => {
+        no_motion_media_query.addEventListener("change", () => {
+            // Stop JavaScript-based animations.
+            entry.target.children[1].innerText = entry.target.children[1].getAttribute("data-target");
+            counterObserver.unobserve(entry.target);
+            return;
+        });
         if (!entry.isIntersecting) {
             return;
         } else {
