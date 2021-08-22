@@ -36,7 +36,6 @@ body {
     line-height: 1.5;
     position: relative;
     overflow-x: hidden;
-    overflow: overlay;
 }
 img {
     max-width: 100%;
@@ -49,15 +48,6 @@ h2,
 h3 {
     font-family: var(--ff-accent);
     line-height: 1.1;
-}
-::-webkit-scrollbar {
-    width: 15px;
-}
-::-webkit-scrollbar-thumb {
-    background: hsla(0, 0%, 0%, 0.6);
-    border: 4px solid transparent;
-    background-clip: content-box;
-    border-radius: 20px;
 }
 /*=================
 Utility Classes
@@ -192,7 +182,7 @@ Main Header
     width: 0;
     font-size: 0.8125rem;
     font-weight: 700;
-    transition: opacity 0.3s, transform .1s;
+    transition: opacity 0.3s, transform 0.1s;
     z-index: 51;
 }
 .header.nav-active .header__language {
@@ -200,7 +190,7 @@ Main Header
     width: auto;
     transform: translate(-50%, 0);
 }
-.header__search-wrapper{
+.header__search-wrapper {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -211,7 +201,7 @@ Main Header
     /* border: 1px solid; */
 }
 .header__search {
-    --clr-white: hsla(220, 6%, 90%, .4);
+    --clr-white: hsla(220, 6%, 90%, 0.4);
     background: transparent;
     border: none;
     border-bottom: 1px solid var(--clr-white);
@@ -221,20 +211,20 @@ Main Header
     pointer-events: none;
     z-index: 51;
 }
-.header.nav-active .header__search{
+.header.nav-active .header__search {
     pointer-events: all;
     border-bottom: 2px solid var(--clr-primary-v-light);
 }
-.header__search-icon{
+.header__search-icon {
     position: absolute;
     top: -3px;
     right: 0;
     opacity: 0;
     width: 0;
     stroke: white;
-    transition: all .4s;
+    transition: all 0.4s;
 }
-.header.nav-active .header__search-icon{
+.header.nav-active .header__search-icon {
     width: 20px;
     opacity: 1;
 }
@@ -273,7 +263,7 @@ Main Header
     margin: 0.5em 0;
     text-align: center;
 }
-.header__nav-list-item:first-child{
+.header__nav-list-item:first-child {
     margin-top: -3em;
 }
 .header__nav-list-item a {
@@ -443,7 +433,7 @@ Leader Section
 }
 .leaders__logo {
     margin-top: 6em;
-    opacity: 0;
+    /* opacity: 1; */
 }
 .leaders__heading {
     --clr-black: hsla(220, 15%, 16%, 0.4);
@@ -681,7 +671,7 @@ Footer
         width: min(85vw, 70.5rem);
         padding-block: 1.5em;
     }
-    .header__language{
+    .header__language {
         order: 1;
         position: static;
         width: auto;
@@ -689,16 +679,16 @@ Footer
         opacity: 1;
         margin-right: auto;
     }
-    .header__search-wrapper{
+    .header__search-wrapper {
         position: static;
         order: 3;
         transform: none;
         pointer-events: all;
     }
-    .header__search{
+    .header__search {
         border-bottom: 1px solid white;
     }
-    .header__search-icon{
+    .header__search-icon {
         position: static;
         opacity: 1;
         width: 20px;
@@ -722,10 +712,24 @@ Footer
         padding-inline: 1.5em;
     }
     .header__nav-list-item:first-child {
-        margin-top: .5em;
+        margin-top: 0.5em;
     }
-    .header__nav-list-item a{
+    .header__nav-list-item a {
         opacity: 1;
         font-size: 0.8125rem;
+    }
+}
+@media (min-width: 53.125em) {
+    body {
+        overflow: overlay;
+    }
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: hsla(0, 0%, 0%, 0.6);
+        border: 4px solid transparent;
+        background-clip: content-box;
+        border-radius: 20px;
     }
 }
