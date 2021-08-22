@@ -14,6 +14,11 @@ Custom Properties
     --clr-primary-light: hsl(212, 12%, 51%);
     --clr-primary: hsl(219, 18%, 34%);
 
+    --clr-accent: #b39659;
+    --clr-accent-dark: #665c47;
+    --clr-accent-dark-2: #7a6942;
+    --clr-accent-black: #2e2a22;
+
     --transition: all 0.3s;
     --radius: 5px;
 }
@@ -136,8 +141,7 @@ Main Header
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateX(0);
-    transition: transform 0.6s;
+    transform: translateX(0); /* doesn't need to be here anymore but header breaks without it now :( */
 }
 .header::before {
     --clr-black: hsla(220, 15%, 16%, 0.6);
@@ -197,23 +201,23 @@ Main Header
     bottom: 4.5rem;
     width: min-content;
     height: 20px;
-    z-index: 52;
-    /* border: 1px solid; */
+    z-index: 51;
 }
 .header__search {
-    --clr-white: hsla(220, 6%, 90%, 0.4);
     background: transparent;
     border: none;
-    border-bottom: 1px solid var(--clr-white);
     outline: none;
     color: white;
     font-size: 0.9rem;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 1s .3s;
     pointer-events: none;
-    z-index: 51;
 }
 .header.nav-active .header__search {
     pointer-events: all;
     border-bottom: 2px solid var(--clr-primary-v-light);
+    transform: scale(1);
 }
 .header__search-icon {
     position: absolute;
@@ -233,20 +237,19 @@ Main Header
     top: 0;
     right: 0;
     width: 0;
-    height: 0;
+    height: 100%;
     overflow: hidden;
     opacity: 0;
-    transform: scale(0);
-    transform-origin: top right;
+    transform: rotateY(90deg);
     transition: all 0.4s;
     z-index: 50;
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
 }
 .header.nav-active .header__nav-list-container {
-    transform: scale(1);
+    transform: rotate(0deg);
     opacity: 1;
     width: 100%;
     height: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
 }
 .header__nav-list {
     display: flex;
@@ -257,6 +260,7 @@ Main Header
     padding: 2em;
     background: var(--clr-primary);
     list-style-type: none;
+    overflow-y: auto;
 }
 .header__nav-list-item {
     padding: 0.5em 0;
@@ -299,9 +303,6 @@ Main Header
 .header.nav-active .header__toggle-icon .line3 {
     transform: translate(30%, 0%) rotateZ(-41deg);
 }
-/* .header__nav-list-container.nav-active{ */
-
-/* } */
 
 .header__banner {
     display: flex;
@@ -717,6 +718,24 @@ Footer
     .header__nav-list-item a {
         opacity: 1;
         font-size: 0.8125rem;
+    }
+}
+@media (min-width: 35.5em) and (max-width: 47.9375em) and (orientation: landscape) {
+    .header__nav-list {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+    .header__nav-list-item:first-child {
+        margin-top: 0;
+    }
+    .header__nav-list-item{
+        margin: 0;
+    }
+    .header__nav-list-item:nth-child(odd){
+        margin-top: -20%;
+    }
+    .header__nav-list-item:nth-child(even){
+        margin-top: 10%;
     }
 }
 @media (min-width: 53.125em) {
