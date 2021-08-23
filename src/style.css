@@ -574,16 +574,18 @@ Client Reviews Section
 }
 .client-reviews__card {
     padding: 1em;
-    border: 1px solid var(--clr-primary-desat);
     border-radius: var(--radius);
     margin: 1.5em auto;
+    max-width: 450px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.15);
 }
 .client-reviews__quotes{
     height: 30px;
 }
 .client-reviews__review-text{
     font-size: 0.9rem;
-    margin-top: .5em;
+    margin: .5em auto 0;
+    max-width: 45ch;
 }
 .client-reviews__img-wrapper{
     margin: 1em auto .5em;
