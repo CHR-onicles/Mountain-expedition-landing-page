@@ -7,17 +7,15 @@ Custom Properties
 
     --clr-white: hsl(220, 6%, 90%);
     --clr-gray-light: hsl(233, 5%, 61%);
-    --clr-gray: hsl(224, 8%, 38%);
+    --clr-gray: hsl(225, 8%, 38%);
     --clr-black: hsl(220, 15%, 16%);
 
-    --clr-primary-v-light: hsl(215, 11%, 70%);
+    --clr-primary-v-light: #aab1bb;
     --clr-primary-light: hsl(212, 12%, 51%);
     --clr-primary: hsl(219, 18%, 34%);
+    --clr-primary-desat: hsl(219, 12%, 34%);
+    --clr-primary-dark: hsl(219, 23%, 20%);
 
-    --clr-accent: #b39659;
-    --clr-accent-dark: #665c47;
-    --clr-accent-dark-2: #7a6942;
-    --clr-accent-black: #2e2a22;
 
     --transition: all 0.3s;
     --radius: 5px;
@@ -42,7 +40,7 @@ body {
     position: relative;
     overflow-x: hidden;
 }
-img {
+img, iframe {
     max-width: 100%;
 }
 a {
@@ -318,7 +316,7 @@ Main Header
 }
 .header__heading {
     font-size: 2.5rem;
-    margin-top: 2rem;
+    margin-top: .8em;
 }
 .header__intro-text {
     margin-top: 1.5rem;
@@ -365,14 +363,14 @@ Main Header
 About Us Section
 =================*/
 .about {
-    margin-top: 4.5rem;
+    margin-top: 4.5em;
     position: relative;
     background: linear-gradient(to top, hsla(212, 12%, 51%, 0.3), hsla(220, 6%, 95%, 1) 60%);
 }
 .about::before {
     content: "";
     position: absolute;
-    top: -5.2rem;
+    top: -5.2em;
     left: 50%;
     transform: translateX(-50%);
     height: 90px;
@@ -394,7 +392,7 @@ About Us Section
     color: var(--clr-black);
 }
 .about__text {
-    margin: 0.8em auto 0 auto;
+    margin: 0.8em auto 0;
     width: min(90%, 45ch);
 }
 .about__about-btn,
@@ -412,7 +410,7 @@ About Us Section
 Leader Section
 =================*/
 .leaders {
-    padding-top: 6rem;
+    padding-top: 6em;
     position: relative;
     min-height: 100vh;
     color: white;
@@ -457,7 +455,7 @@ Leader Section
     animation: clouds 120s linear infinite;
 }
 .leaders__text {
-    margin: 1rem auto 0 auto;
+    margin: 1em auto 0;
     max-width: 50ch;
 }
 /*=================
@@ -467,8 +465,8 @@ Activities Section
     --clr-black: hsla(220, 25%, 16%, 0.8);
 
     position: relative;
-    padding: 13rem 0 8rem 0;
-    margin-top: -6.5rem;
+    padding: 13em 0 8em;
+    margin-top: -6.5em;
     width: 100%;
     color: white;
     text-align: center;
@@ -480,14 +478,13 @@ Activities Section
     display: block;
 }
 .activities__card + .activities__card {
-    margin-top: 4rem;
+    margin-top: 4em;
 }
 .activities__card-heading {
     font-size: 1.5rem;
-    padding-top: 0.5em;
 }
 .activities__card-excerpt {
-    margin: 0.8rem auto 0 auto;
+    margin: 0.8em auto 0;
     font-size: 0.8125rem;
     max-width: 45ch;
 }
@@ -564,40 +561,59 @@ Statistics Section
 Contact Us Section
 =================*/
 .contact-us {
-    --clr-black: hsla(220, 15%, 16%, 0.8);
-    background: linear-gradient(var(--clr-black), var(--clr-black)), url("./assets/images/mobile/mountain-valley.webp") center / cover no-repeat;
-    margin-top: 8rem;
-    padding: 4rem 0;
+    margin-top: 8em;
+    padding: 4em 0;
+    background: linear-gradient(var(--clr-primary-desat), var(--clr-primary-desat));
+    clip-path: polygon(50% 3%, 55% 0, 100% 0, 100% 100%, 0 100%, 0 0, 45% 0);
+}
+.col{
+}
+.contact-us__map-wrapper{
+    margin: 0 auto;
+    height: 250px;
+    display: flex;
+}
+.contact-us__map{
+    width: 100%;
+    height: 100%;
 }
 .contact-us__heading {
     font-size: 2rem;
     color: white;
     text-align: center;
-    padding-bottom: 0.6em;
+    padding-top: 1.5em;
 }
 .contact-us__name-input,
 .contact-us__email-input,
-.contact-us__message-input {
+.contact-us__tel-input {
     --clr-primary-v-light: hsla(215, 11%, 70%, 0.8);
     display: block;
     background: none;
-    padding: 0.6em;
+    padding: 0.6em 0 .6em 3em;
     outline: none;
-    width: min(100%, 350px);
-    margin: 1em auto 0 auto;
+    width: min(100%, 500px);
+    margin: 1em auto 0;
     border: 1px solid var(--clr-primary-v-light);
-    border-right-color: hsla(220, 6%, 90%, 0.2);
-    border-bottom-color: hsla(220, 6%, 90%, 0.2);
     border-radius: var(--radius);
     font-family: inherit;
     font-size: 1rem;
     color: white;
-    backdrop-filter: blur(1px);
 }
 .contact-us__name-input::placeholder,
 .contact-us__email-input::placeholder,
-.contact-us__message-input::placeholder {
+.contact-us__tel-input::placeholder {
     color: var(--clr-primary-v-light);
+}
+.contact-us__wrapper {
+    position: relative;
+}
+.contact-us__icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    fill: white;
+    width: 25px;
 }
 .contact-us__submit-btn {
     display: block;
@@ -614,8 +630,8 @@ Contact Us Section
 Footer
 =================*/
 .footer {
-    padding: 4rem 0 2rem 0;
-    background: var(--clr-primary);
+    padding: 5rem 0 2rem;
+    background: var(--clr-primary-dark);
     color: var(--clr-white);
 }
 .footer__logo {
@@ -625,11 +641,11 @@ Footer
 }
 .footer__nav-list {
     list-style-type: none;
-    margin: 1rem auto;
+    margin: 1em auto;
 }
 .footer__nav-list-item {
     text-align: center;
-    padding: 0.5rem 0;
+    padding: 0.5em 0;
 }
 .footer__nav-list-item a {
     color: var(--clr-white);
