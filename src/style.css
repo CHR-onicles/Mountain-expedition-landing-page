@@ -578,14 +578,15 @@ Client Reviews Section
     margin: 1.5em auto;
     max-width: 450px;
     box-shadow: 0 5px 10px rgba(0,0,0,.15);
+    color: var(--clr-black);
 }
 .client-reviews__quotes{
     height: 30px;
 }
 .client-reviews__review-text{
-    font-size: 0.9rem;
     margin: .5em auto 0;
     max-width: 45ch;
+    font-size: 0.9rem;
 }
 .client-reviews__img-wrapper{
     margin: 1em auto .5em;
@@ -692,6 +693,25 @@ Footer
 }
 .footer__nav-list-item a {
     color: var(--clr-white);
+}
+.footer__social-icons{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    width: min(75%, 220px);
+    margin: 0 auto 1em;
+}
+.footer__social-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--clr-primary-v-light);
+    border-radius: 50%;
+}
+.footer__social-icon svg{
+    fill: var(--clr-white);
 }
 .footer__copyright,
 .footer__developer {
