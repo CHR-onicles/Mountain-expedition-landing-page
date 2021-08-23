@@ -14,7 +14,7 @@ Custom Properties
     --clr-primary-light: hsl(212, 12%, 51%);
     --clr-primary: hsl(219, 18%, 34%);
     --clr-primary-desat: hsl(219, 12%, 34%);
-    --clr-primary-dark: hsl(219, 23%, 20%);
+    --clr-primary-dark: #272f3f;
 
 
     --transition: all 0.3s;
@@ -507,11 +507,13 @@ Statistics Section
     text-align: center;
     margin-top: 2em;
 }
-.statistics__heading {
+.statistics__heading,
+.client-reviews__heading {
     font-size: 2rem;
     color: var(--clr-black);
 }
-.statistics__sub-heading {
+.statistics__sub-heading,
+.client-reviews__sub-heading {
     font-family: var(--ff-primary);
     font-weight: 400;
     font-size: 0.8125rem;
@@ -558,10 +560,51 @@ Statistics Section
     font-size: 1rem;
 }
 /*=================
+Client Reviews Section
+=================*/
+.client-reviews{
+    margin-top: 7rem;
+    text-align: center;
+}
+.client-reviews .row{
+    display: block;
+}
+.client-reviews__sub-heading{
+    letter-spacing: 4px;
+}
+.client-reviews__card {
+    padding: 1em;
+    border: 1px solid var(--clr-primary-desat);
+    border-radius: var(--radius);
+    margin: 1.5em auto;
+}
+.client-reviews__quotes{
+    height: 30px;
+}
+.client-reviews__review-text{
+    font-size: 0.9rem;
+    margin-top: .5em;
+}
+.client-reviews__img-wrapper{
+    margin: 1em auto .5em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.client-reviews__name {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.client-reviews__location{
+    font-size: 0.8125rem;
+}
+/*=================
 Contact Us Section
 =================*/
 .contact-us {
     margin-top: 8em;
+    margin-bottom: -.05em; /* for white space probably caused by clip path */
     padding: 4em 0;
     background: linear-gradient(var(--clr-primary-desat), var(--clr-primary-desat));
     clip-path: polygon(50% 3%, 55% 0, 100% 0, 100% 100%, 0 100%, 0 0, 45% 0);
