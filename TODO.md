@@ -6,6 +6,8 @@ Project Description
 
 ### Todo
 
+- [ ] Add testimonial cards  
+- [ ] Update footer to complex layout from Kevin's pdf design  
 - [ ] Substitute mobile images on desktop view  
 - [ ] Convert statistics cards to 2x2 grid in tablet view  
 - [ ] ❓ Random flicker on chrome in mobile view when opening nav menu.  
