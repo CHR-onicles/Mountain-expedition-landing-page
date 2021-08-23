@@ -566,8 +566,6 @@ Contact Us Section
     background: linear-gradient(var(--clr-primary-desat), var(--clr-primary-desat));
     clip-path: polygon(50% 3%, 55% 0, 100% 0, 100% 100%, 0 100%, 0 0, 45% 0);
 }
-.col{
-}
 .contact-us__map-wrapper{
     margin: 0 auto;
     height: 250px;
@@ -589,7 +587,7 @@ Contact Us Section
     --clr-primary-v-light: hsla(215, 11%, 70%, 0.8);
     display: block;
     background: none;
-    padding: 0.6em 0 .6em 3em;
+    padding: 0.6em 0 .6em 2.6em;
     outline: none;
     width: min(100%, 500px);
     margin: 1em auto 0;
@@ -612,8 +610,8 @@ Contact Us Section
     top: 50%;
     transform: translateY(-50%);
     left: 10px;
+    width: 18px;
     fill: white;
-    width: 25px;
 }
 .contact-us__submit-btn {
     display: block;
