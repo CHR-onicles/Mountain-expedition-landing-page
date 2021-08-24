@@ -1,10 +1,11 @@
 const review_texts = [
-    "I remember how I stumbled and tried to get a hold on someone for support, it was one of the tour guides. I haven't been able to lay hands off them ever since. Today we're happily married.",
+    "One time I stumbled and tried to get a hold on someone for support, it was one of the tour guides. I haven't been able to lay hands off them ever since. Today we're happily married.",
     "How do these people know so much about the history of the places we visit wow. Will definitely try this again later this year. Awesome experience!",
     "Value for your money people! Thats exactly what these guys give you. NO CUP! wait... cup? cap? You get me.",
     "Man the tour guides here definitely beat my history teachers hands down! Learnt a ton!",
     "Oh my God! The thrill of reaching the peak of these glorious mountains and shouting your name woosh! Can't wait to do it again!",
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam quod vero ab optio pariatur, illo esse reiciendis! Animi, praesentium unde.",
+    "Didn't know my eyelashes could freeze at such heights geez. Luckily the tour guide helped defrost quickly, no injuries whatsoever. Great job.",
+    "Yoga on top of a mountain is actually as good it sounds guys! Check it out!",
 ];
 
 const nav_btn = document.querySelector(".header__toggle-btn");
@@ -22,7 +23,6 @@ const client_row = document.querySelector(".client-reviews .row");
 
 const no_motion_media_query = window.matchMedia("(prefers-reduced-motion: reduce)");
 let rand_review = getRandomReviewText(review_texts);
-
 
 setTimeout(() => {
     banner_elements.forEach((el) => {
@@ -133,32 +133,31 @@ BackToTopObserver.observe(header);
 async function getClients() {
     res = await fetch("https://randomuser.me/api?results=3");
     const { results } = await res.json();
-    
+
     client_row.innerHTML = "";
-    
+
     results.forEach(({ picture, name, location }) => {
         let card = document.createElement("article");
         card.classList.add("client-reviews__card");
         card.innerHTML = `<img class="client-reviews__quotes" src="./assets/images/quote-img.png" alt="Bold quotes">
         <p class="client-reviews__review-text">${rand_review.next().value}</p>
-                            <div class="client-reviews__img-wrapper">
-                            <img class="client-reviews__img" src=${picture.medium} alt="${name.first} ${name.last}">
-                            </div>
-                            <p class="client-reviews__name">${name.first} ${name.last}</p>
-                            <p class="client-reviews__location">${location.city}, ${location.country}</p>`;        
-                            
+        <div class="client-reviews__img-wrapper">
+        <img class="client-reviews__img" src=${picture.medium} alt="${name.first} ${name.last}">
+        </div>
+        <p class="client-reviews__name">${name.first} ${name.last}</p>
+        <p class="client-reviews__location">${location.city}, ${location.country}</p>`;
+
         client_row.appendChild(card);
     });
-    nums = nums.splice();
 }
 getClients();
 
 /* Source: Stackoverflow
 https://stackoverflow.com/questions/18806210/generating-non-repeating-random-numbers-in-js
 */
-function* getRandomReviewText(){
+function* getRandomReviewText() {
     let i = review_texts.length;
-    
+
     while (i--) {
         yield review_texts.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
     }

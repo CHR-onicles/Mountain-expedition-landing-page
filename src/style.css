@@ -576,7 +576,8 @@ Client Reviews Section
     padding: 1em;
     border-radius: var(--radius);
     margin: 1.5em auto;
-    max-width: 450px;
+    max-width: 28.125rem;
+    min-height: 16.875rem;
     box-shadow: 0 5px 10px rgba(0,0,0,.15);
     color: var(--clr-black);
 }
