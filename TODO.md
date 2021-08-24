@@ -6,6 +6,7 @@ Project Description
 
 ### Todo
 
+- [ ] Use observerAPI on pseudo elements with images  
 - [ ] Substitute mobile images on desktop view  
 - [ ] Convert statistics cards to 2x2 grid in tablet view  
 - [ ] ❓ Random flicker on chrome in mobile view when opening nav menu.  

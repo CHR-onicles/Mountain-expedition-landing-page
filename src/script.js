@@ -18,8 +18,9 @@ const faders = document.querySelectorAll(".fade");
 const back_to_top = document.querySelector(".back-to-top-btn");
 const banner_elements = document.querySelectorAll(".banner");
 const search = document.querySelector(".header__search");
-const client_card = document.querySelectorAll(".clients-reviews__card");
+const client_reviews_section = document.querySelector(".client-reviews");
 const client_row = document.querySelector(".client-reviews .row");
+const client_card = document.querySelectorAll(".clients-reviews__card");
 
 const no_motion_media_query = window.matchMedia("(prefers-reduced-motion: reduce)");
 let rand_review = getRandomReviewText(review_texts);
@@ -129,6 +130,27 @@ const BackToTopObserver = new IntersectionObserver((entries, BackToTopObserver) 
 BackToTopObserver.observe(header);
 /* End Observer for Back To Top button */
 
+/* Observer for Client Reviews */
+const clientReviewsObserverOptions = {
+    rootMargin: "0px 0px 300px 0px",
+    threshold: 0
+}
+
+const clientReviewsObserver = new IntersectionObserver((entries, clientReviewsObserver) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting){
+            return;
+        } else {
+            console.log("observed client row");
+            getClients();
+            clientReviewsObserver.unobserve(entry.target);
+        }
+    })
+}, clientReviewsObserverOptions)
+
+clientReviewsObserver.observe(client_reviews_section);
+/* End Observer for Client Reviews */
+
 /* Fetching Users For Reviews */
 async function getClients() {
     res = await fetch("https://randomuser.me/api?results=3");
@@ -150,7 +172,6 @@ async function getClients() {
         client_row.appendChild(card);
     });
 }
-getClients();
 
 /* Source: Stackoverflow
 https://stackoverflow.com/questions/18806210/generating-non-repeating-random-numbers-in-js
