@@ -141,7 +141,6 @@ const clientReviewsObserver = new IntersectionObserver((entries, clientReviewsOb
         if (!entry.isIntersecting){
             return;
         } else {
-            console.log("observed client row");
             getClients();
             clientReviewsObserver.unobserve(entry.target);
         }

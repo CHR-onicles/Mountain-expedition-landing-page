@@ -16,7 +16,6 @@ Custom Properties
     --clr-primary-desat: hsl(219, 12%, 34%);
     --clr-primary-dark: hsl(220, 24%, 20%);
 
-
     --transition: all 0.3s;
     --radius: 5px;
 }
@@ -40,7 +39,8 @@ body {
     position: relative;
     overflow-x: hidden;
 }
-img, iframe {
+img,
+iframe {
     max-width: 100%;
 }
 a {
@@ -113,35 +113,35 @@ Utility Classes
 Animations
 =================*/
 @keyframes clouds {
-    0%{
+    0% {
         background-position: 50% 0%;
         transform: scale(1.05);
     }
-    20%{
+    20% {
         transform: scale(1.1);
     }
-    30%{
+    30% {
         transform: scale(1.2);
     }
-    40%{
+    40% {
         transform: scale(1.3);
     }
-    50%{
+    50% {
         transform: scale(1.4);
     }
-    60%{
+    60% {
         transform: scale(1.5);
     }
-    70%{
+    70% {
         transform: scale(1.4);
     }
-    80%{
+    80% {
         transform: scale(1.3);
     }
-    90%{
+    90% {
         transform: scale(1.2);
     }
-    100%{
+    100% {
         background-position: -550% 0%;
         transform: scale(1.1);
     }
@@ -232,7 +232,7 @@ Main Header
     font-size: 0.9rem;
     transform: scale(0);
     transform-origin: bottom right;
-    transition: transform 1s .3s;
+    transition: transform 1s 0.3s;
     pointer-events: none;
 }
 .header.nav-active .header__search {
@@ -342,7 +342,7 @@ Main Header
 }
 .header__heading {
     font-size: 2.5rem;
-    margin-top: .8em;
+    margin-top: 0.8em;
 }
 .header__intro-text {
     margin-top: 1.5rem;
@@ -439,9 +439,10 @@ Leader Section
     padding-top: 6em;
     position: relative;
     min-height: 100vh;
+    background: linear-gradient(hsla(212, 12%, 51%, 0.3), hsla(212, 12%, 51%, 0));
+    border: none;
     color: white;
     text-align: center;
-    background: linear-gradient(hsla(212, 12%, 51%, 0.3), hsla(212, 12%, 51%, 0));
     overflow: hidden;
 }
 .leaders .container {
@@ -532,6 +533,7 @@ Statistics Section
 .statistics {
     text-align: center;
     margin-top: 5em;
+    border: none;
 }
 .statistics__heading,
 .client-reviews__heading {
@@ -588,14 +590,14 @@ Statistics Section
 /*=================
 Client Reviews Section
 =================*/
-.client-reviews{
+.client-reviews {
     margin-top: 7rem;
     text-align: center;
 }
-.client-reviews .row{
+.client-reviews .row {
     display: block;
 }
-.client-reviews__sub-heading{
+.client-reviews__sub-heading {
     letter-spacing: 4px;
 }
 .client-reviews__card {
@@ -604,19 +606,19 @@ Client Reviews Section
     margin: 1.5em auto;
     max-width: 28.125rem;
     min-height: 16.875rem;
-    box-shadow: 0 5px 10px rgba(0,0,0,.15);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     color: var(--clr-black);
 }
-.client-reviews__quotes{
+.client-reviews__quotes {
     height: 30px;
 }
-.client-reviews__review-text{
-    margin: .5em auto 0;
+.client-reviews__review-text {
+    margin: 0.5em auto 0;
     max-width: 45ch;
     font-size: 0.9rem;
 }
-.client-reviews__img-wrapper{
-    margin: 1em auto .5em;
+.client-reviews__img-wrapper {
+    margin: 1em auto 0.5em;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -626,7 +628,7 @@ Client Reviews Section
     font-weight: bold;
     font-size: 0.9rem;
 }
-.client-reviews__location{
+.client-reviews__location {
     font-size: 0.8125rem;
 }
 /*=================
@@ -634,17 +636,19 @@ Contact Us Section
 =================*/
 .contact-us {
     margin-top: 8em;
-    margin-bottom: -.05em; /* for white space probably caused by clip path */
+    margin-bottom: -0.05em; /* for white space probably caused by clip path */
     padding: 4em 0;
     background: linear-gradient(var(--clr-primary-desat), var(--clr-primary-desat));
     clip-path: polygon(50% 3%, 55% 0, 100% 0, 100% 100%, 0 100%, 0 0, 45% 0);
 }
-.contact-us__map-wrapper{
-    margin: 0 auto;
-    height: 250px;
-    display: flex;
+.contact-us .row {
+    display: block;
 }
-.contact-us__map{
+.contact-us__map-wrapper {
+    margin: 0 auto;
+    height: 250px; /* bad practice but needed here */
+}
+.contact-us__map {
     width: 100%;
     height: 100%;
 }
@@ -654,16 +658,20 @@ Contact Us Section
     text-align: center;
     padding-top: 1.5em;
 }
+.contact-us__wrapper {
+    position: relative;
+    width: min(100%, 500px);
+    margin: 1em auto 0;
+}
 .contact-us__name-input,
 .contact-us__email-input,
 .contact-us__tel-input {
     --clr-primary-v-light: hsla(215, 11%, 70%, 0.8);
     display: block;
     background: none;
-    padding: 0.6em 0 .6em 2.6em;
+    padding: 0.6em 0 0.6em 2.6em;
     outline: none;
-    width: min(100%, 500px);
-    margin: 1em auto 0;
+    width: 100%;
     border: 1px solid var(--clr-primary-v-light);
     border-radius: var(--radius);
     font-family: inherit;
@@ -675,14 +683,11 @@ Contact Us Section
 .contact-us__tel-input::placeholder {
     color: var(--clr-primary-v-light);
 }
-.contact-us__wrapper {
-    position: relative;
-}
-.contact-us__icon{
+.contact-us__icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 10px;
+    left: 3%;
     width: 18px;
     fill: white;
 }
@@ -721,14 +726,14 @@ Footer
 .footer__nav-list-item a {
     color: var(--clr-white);
 }
-.footer__social-icons{
+.footer__social-icons {
     display: flex;
     list-style-type: none;
     justify-content: space-between;
     width: min(75%, 220px);
     margin: 0 auto 1em;
 }
-.footer__social-icon{
+.footer__social-icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -737,7 +742,7 @@ Footer
     border: 1px solid var(--clr-primary-v-light);
     border-radius: 50%;
 }
-.footer__social-icon svg{
+.footer__social-icon svg {
     fill: var(--clr-white);
 }
 .footer__copyright,
@@ -751,10 +756,44 @@ Footer
 .footer__developer a {
     color: white;
 }
+@media (min-width: 35.5em) {
+    .leaders::before {
+        min-height: 150vh;
+    }
+}
+@media (min-width: 35.5em) and (max-width: 47.9375em) and (orientation: landscape) {
+    /* mobile phones in landscape mode */
+    .header__nav-list {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+    .header__nav-list-item:first-child {
+        margin-top: 0;
+    }
+    .header__nav-list-item {
+        margin: 0;
+    }
+    .header__nav-list-item:nth-child(odd) {
+        margin-top: -20%;
+    }
+    .header__nav-list-item:nth-child(even) {
+        margin-top: 10%;
+    }
+}
 @media (min-width: 48em) {
     /*=================
     Header Section
     =================*/
+    .header__banner-logo,
+    .leaders__logo {
+        width: min(24vw, 230px);
+    }
+    .header__heading {
+        font-size: clamp(2.5rem, 2.5rem + 2.5vw, 5rem);
+    }
+    .header__intro-text {
+        font-size: clamp(0.8125rem, 0.8125rem + 0.5vw, 1.5rem);
+    }
     .header__toggle-btn {
         display: none;
     }
@@ -783,12 +822,16 @@ Footer
     }
     .header__search {
         border-bottom: 1px solid white;
+        transform: scale(1);
+        transition: none;
+        pointer-events: all;
     }
     .header__search-icon {
         position: static;
         opacity: 1;
         width: 20px;
         transform: translate(750%, -130%);
+        transition: none;
     }
     .header__nav-list-container {
         position: static;
@@ -811,35 +854,116 @@ Footer
         margin-top: 0.5em;
     }
     .header__nav-list-item a {
+        font-size: clamp(0.8125rem, 0.8125rem + 0.3vw, 1rem);
         opacity: 1;
-        font-size: 0.8125rem;
+        transition: none;
     }
-}
-@media (min-width: 35.5em) and (max-width: 47.9375em) and (orientation: landscape) {
-    /* mobile phones in landscape mode */
-    .header__nav-list {
-        flex-flow: row wrap;
-        justify-content: space-evenly;
+    /*=================
+    About Us Section
+    =================*/
+    .about__heading,
+    .leaders__heading,
+    .statistics__heading,
+    .contact-us__heading {
+        font-size: clamp(1.5rem, 1.5rem + 1.5vw, 2.5rem);
     }
-    .header__nav-list-item:first-child {
+    .about .row {
+        display: flex;
+        text-align: left;
+        gap: 2em;
+        margin-top: 2em;
+    }
+    .about .row .col {
+        flex-basis: 100%;
+    }
+    .about__text {
+        width: 100%;
+    }
+    /*=================
+    Leader Section
+    =================*/
+    .leaders::before {
+        background: url("./assets/images/desktop/expedition.png") 65% center / cover no-repeat;
+    }
+    .leaders::after {
+        min-height: min(45vh, 400px);
+    }
+    .leaders__logo {
+        margin-top: 9.5rem;
+    }
+    /*=================
+    Contact Us Section
+    =================*/
+    .contact-us {
+        clip-path: polygon(50% 3%, 52% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
+        margin-bottom: -0.5em; /* for white space probably caused by clip path */
+    }
+    /*=================
+    Activities Section
+    =================*/
+    .activities {
+        padding-top: 10rem;
+        clip-path: polygon(0 0, 100% 12%, 100% 88%, 0 100%);
+        text-align: left;
+    }
+    .activities .row {
+        display: flex;
+        gap: 1.5rem;
+    }
+    .activities__card:last-child {
         margin-top: 0;
     }
-    .header__nav-list-item{
+    .activities__img-wrapper {
+        min-height: fit-content;
         margin: 0;
     }
-    .header__nav-list-item:nth-child(odd){
-        margin-top: -20%;
+    .activities__card-heading {
+        margin-top: 1rem;
     }
-    .header__nav-list-item:nth-child(even){
-        margin-top: 10%;
+    .activities__card-excerpt {
+        margin: 0.8em 0 0;
+        max-width: 40ch;
+    }
+    /*=================
+    Statistics Section
+    =================*/
+    .statistics .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .statistics__card:last-child {
+        margin-top: 0;
+    }
+    /*=================
+    Client Reviews Section
+    =================*/
+    .client-reviews .row {
+        display: flex;
+        gap: 1rem;
+    }
+    .client-reviews__quotes {
+        width: min-content;
+        margin: 0 auto;
+    }
+    .client-reviews__card {
+        display: flex;
+        flex-direction: column;
+    }
+    .client-reviews__review-text {
+        padding-bottom: 1em;
+    }
+    .client-reviews__img-wrapper {
+        margin-top: auto;
+    }
+    /*=================
+    Contact Us Section
+    =================*/
+    .contact-us__map-wrapper {
+        height: 350px;
     }
 }
-@media (min-width: 35.5em){
-    .leaders::before{
-        min-height: 150vh;
-    }
-}
-@media (min-width: 53.125em) {
+@media (min-width: 58.75em) {
     body {
         overflow: overlay;
     }
@@ -852,16 +976,50 @@ Footer
         background-clip: content-box;
         border-radius: 20px;
     }
+    /*=================
+    Statistics Section
+    =================*/
+    .statistics__card:last-child {
+        margin-top: 1em;
+    }
+    /*=================
+    Contact Us Section
+    =================*/
+    .contact-us {
+        background: none;
+    }
+    .contact-us .row {
+        display: flex;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: var(--radius);
+        overflow: hidden;
+    }
+    .contact-us .row > * {
+        flex-basis: 100%;
+    }
+    .contact-us .col {
+        background: linear-gradient(var(--clr-primary-desat), var(--clr-primary-desat));
+        padding: 2.5em 1.5em;
+    }
+    .contact-us__heading {
+        padding-top: 0;
+        margin-bottom: 1.2em;
+    }
+    .contact-us__map-wrapper {
+        height: auto;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
-  }
+    *,
+    ::before,
+    ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
 }
