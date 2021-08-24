@@ -710,6 +710,9 @@ Footer
     background: var(--clr-primary-dark);
     color: var(--clr-white);
 }
+.footer .row {
+    display: block;
+}
 .footer__logo {
     width: 100px;
     display: block;
@@ -961,6 +964,19 @@ Footer
     =================*/
     .contact-us__map-wrapper {
         height: 350px;
+    }
+    /*=================
+    Footer Section
+    =================*/
+    .footer__nav-list{
+        display: flex;
+        justify-content: space-between;
+        width: min(60%, 380px);
+        margin: 1em auto;
+    }
+    .footer__social-icons{
+        grid-area: social-icons;
+        width: min(40vw, 220px);
     }
 }
 @media (min-width: 58.75em) {
