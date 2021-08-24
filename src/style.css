@@ -156,6 +156,38 @@ Animations
         opacity: 0;
     }
 }
+@keyframes droplets-wiggle {
+    10% {
+        border-radius: 33% 74% 53% 59% / 61% 62% 47% 48%;
+    }
+    20% {
+        border-radius: 26% 68% 43% 51% / 59% 68% 42% 50%;
+    }
+    30% {
+        border-radius: 26% 71% 43% 48% / 52% 58% 62% 70%;
+    }
+    40% {
+        border-radius: 16% 78% 33% 50% / 29% 78% 32% 20%;
+    }
+    50% {
+        border-radius: 40% 28% 50% 45% / 19% 68% 40% 35%;
+    }
+    60% {
+        border-radius: 39% 18% 53% 30% / 78% 47% 89% 18%;
+    }
+    70% {
+        border-radius: 30% 70% 43% 57% / 59% 58% 42% 41%;
+    }
+    80% {
+        border-radius: 33% 74% 53% 59% / 61% 62% 47% 48%;
+    }
+    90% {
+        border-radius: 30% 70% 52% 57% / 60% 58% 32% 30%;
+    }
+    100% {
+        border-radius: 20% 75% 39% 50% / 30% 59% 27% 75%;
+    }
+}
 /*=================
 Main Header
 =================*/
@@ -534,6 +566,68 @@ Statistics Section
     text-align: center;
     margin-top: 5em;
     border: none;
+    position: relative;
+}
+.droplet {
+    position: absolute;
+    background: transparent;
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05), inset -10px -10px 10px rgba(255, 255, 255, 0.8), 10px 10px 20px rgba(0, 0, 0, 0.2);
+    animation: droplets-wiggle 40s linear infinite;
+}
+.droplet:nth-child(1) {
+    top: 0;
+    left: 5vw;
+    width: 100px;
+    height: 100px;
+    border-radius: 30% 70% 43% 57% / 59% 58% 42% 41%;
+}
+.droplet:nth-child(1)::before,
+.droplet:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    background: white;
+}
+.droplet:nth-child(1)::before {
+    top: 30%;
+    left: 40%;
+    width: 17px;
+    height: 17px;
+    border-radius: 36% 64% 24% 76% / 69% 37% 63% 31%;
+}
+.droplet:nth-child(1)::after {
+    top: 25%;
+    left: 25%;
+    width: 9px;
+    height: 9px;
+    border-radius: 50% 50% 58% 42% / 74% 59% 41% 26%;
+}
+.droplet:nth-child(2) {
+   bottom: 10vw;
+    right: 10vw;
+    width: 60px;
+    height: 60px;
+    border-radius: 50% 50% 52% 48% / 74% 45% 55% 26%;
+    animation-delay: 5s;
+}
+.droplet:nth-child(2)::before,
+.droplet:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    background: white;
+}
+.droplet:nth-child(2)::before {
+    top: 25%;
+    left: 55%;
+    width: 15px;
+    height: 15px;
+    border-radius: 36% 64% 24% 76% / 69% 37% 63% 31%;
+}
+.droplet:nth-child(2)::after {
+    top: 27%;
+    left: 40%;
+    width: 7px;
+    height: 7px;
+    border-radius: 50% 50% 58% 42% / 74% 59% 41% 26%;
 }
 .statistics__heading,
 .client-reviews__heading {
@@ -576,7 +670,6 @@ Statistics Section
     display: block;
     width: 50px;
 }
-
 .statistics__number {
     display: block;
     font-size: 3rem;
@@ -660,7 +753,7 @@ Contact Us Section
 }
 .contact-us__wrapper {
     position: relative;
-    width: min(100%, 500px);
+    width: min(100%, 450px);
     margin: 1em auto 0;
 }
 .contact-us__name-input,
@@ -784,9 +877,25 @@ Footer
     }
 }
 @media (min-width: 48em) {
+    body {
+        overflow: overlay;
+    }
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: hsla(0, 0%, 0%, 0.6);
+        border: 4px solid transparent;
+        background-clip: content-box;
+        border-radius: 20px;
+    }
     /*=================
     Header Section
     =================*/
+    .header::before{
+        background: linear-gradient(to top, var(--clr-black), var(--clr-black)), url("./assets/images/desktop/hero.webp") no-repeat center / cover;
+
+    }
     .header__banner-logo,
     .leaders__logo {
         width: min(24vw, 230px);
@@ -930,6 +1039,13 @@ Footer
     /*=================
     Statistics Section
     =================*/
+    .droplet:nth-child(1){
+        top: -3vw;
+        left: 30vw;
+    }
+    .droplet:nth-child(2){
+        right: 32vw;
+    }
     .statistics .row {
         display: flex;
         flex-wrap: wrap;
@@ -968,35 +1084,37 @@ Footer
     /*=================
     Footer Section
     =================*/
-    .footer__nav-list{
+    .footer__nav-list {
         display: flex;
         justify-content: space-between;
         width: min(60%, 380px);
         margin: 1em auto;
     }
-    .footer__social-icons{
+    .footer__social-icons {
         grid-area: social-icons;
         width: min(40vw, 220px);
     }
 }
 @media (min-width: 58.75em) {
-    body {
-        overflow: overlay;
-    }
-    ::-webkit-scrollbar {
-        width: 15px;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: hsla(0, 0%, 0%, 0.6);
-        border: 4px solid transparent;
-        background-clip: content-box;
-        border-radius: 20px;
+    /*=================
+    Activities Section
+    =================*/
+    .activities{
+        background: linear-gradient(90deg, var(--clr-black), var(--clr-black)), url("./assets/images/desktop/snowfield.webp") center / cover no-repeat;
     }
     /*=================
     Statistics Section
     =================*/
     .statistics__card:last-child {
         margin-top: 1em;
+    }
+    .droplet:nth-child(1){
+        top: 7vw;
+        left: 23vw;
+    }
+    .droplet:nth-child(2){
+        bottom: 5vw;
+        right: 25vw;
     }
     /*=================
     Contact Us Section
@@ -1023,6 +1141,14 @@ Footer
     }
     .contact-us__map-wrapper {
         height: auto;
+    }
+}
+@media (min-width: 90em) {
+     /*=================
+    Clients Reviews Section
+    =================*/
+    .client-reviews .row {
+        gap: 2.5rem;
     }
 }
 
