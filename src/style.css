@@ -478,7 +478,7 @@ Leaders Section
     overflow: hidden;
 }
 .leaders .container {
-    z-index: 2;
+    z-index: 1;
 }
 .leaders__logo {
     margin-top: 6em;
@@ -524,19 +524,22 @@ Activities Section
     --clr-black: hsla(220, 25%, 16%, 0.8);
 
     position: relative;
-    padding: 13em 0 8em;
-    margin-top: -6.5em;
     width: 100%;
     color: white;
     text-align: center;
+    padding: 13em 0 8em;
+    margin-top: -6.5em;
+}
+.activities::before{
+    content: "";
+    position: absolute;
+    inset: 0;
     background: linear-gradient(90deg, var(--clr-black), var(--clr-black)), url("./assets/images/mobile/snowfield.webp") center / cover no-repeat;
     clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+    z-index: -2;
 }
 .activities .row {
     display: block;
-}
-.activities__card{
-    z-index: 1;
 }
 .activities__card + .activities__card {
     margin-top: 4em;
@@ -1011,8 +1014,10 @@ Footer
     =================*/
     .activities {
         padding-top: 10rem;
-        clip-path: polygon(0 0, 100% 12%, 100% 88%, 0 100%);
         text-align: left;
+    }
+    .activities::before{
+        clip-path: polygon(0 0, 100% 12%, 100% 88%, 0 100%);
     }
     .activities .row {
         display: flex;
@@ -1123,7 +1128,7 @@ Footer
     /*=================
     Activities Section
     =================*/
-    .activities{
+    .activities::before{
         background: linear-gradient(90deg, var(--clr-black), var(--clr-black)), url("./assets/images/desktop/snowfield.webp") center / cover no-repeat;
     }
     /*=================
