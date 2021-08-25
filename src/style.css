@@ -528,7 +528,7 @@ Activities Section
     color: white;
     text-align: center;
     padding: 13em 0 8em;
-    margin-top: -6.5em;
+    margin-top: -6.5rem;
 }
 .activities::before{
     content: "";
@@ -861,7 +861,7 @@ Footer
 
 @media (min-width: 35.5em) {
     .leaders::before {
-        min-height: 150vh;
+        min-height: min(150vh, 640px);
     }
 }
 
@@ -1003,8 +1003,12 @@ Footer
     /*=================
     Leader Section
     =================*/
+    .leaders{
+        margin-bottom: -7rem;
+    }
     .leaders::before {
-        background: url("./assets/images/desktop/expedition.png") 65% center / cover no-repeat;
+        background: url("./assets/images/desktop/expedition.png") 65% top / cover no-repeat;
+        min-height: min(100vh, 650px);
     }
     .leaders__logo {
         margin-top: 9.5rem;
@@ -1015,9 +1019,11 @@ Footer
     .activities {
         padding-top: 10rem;
         text-align: left;
+        margin-top: -2rem;
+        /* margin-top: -19rem; longer screens  */
     }
     .activities::before{
-        clip-path: polygon(0 0, 100% 12%, 100% 88%, 0 100%);
+        clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
     }
     .activities .row {
         display: flex;
@@ -1124,10 +1130,14 @@ Footer
     }
 }
 
+
 @media (min-width: 58.75em) {
     /*=================
     Activities Section
     =================*/
+    .activities{
+        margin-top: -13vw;
+    }
     .activities::before{
         background: linear-gradient(90deg, var(--clr-black), var(--clr-black)), url("./assets/images/desktop/snowfield.webp") center / cover no-repeat;
     }
@@ -1172,6 +1182,14 @@ Footer
         height: auto;
     }
 }
+
+@media (min-width: 48em) and (min-height: 64em) and (orientation: portrait) {
+    /* Tablets in Portrait mode */
+    .activities{
+        margin-top: -45vh;
+    }
+}
+
 @media (min-width: 90em) {
      /*=================
     Clients Reviews Section
@@ -1180,6 +1198,7 @@ Footer
         gap: 2.5rem;
     }
 }
+
 
 @media (prefers-reduced-motion: reduce) {
     *,

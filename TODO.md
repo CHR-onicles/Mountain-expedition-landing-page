@@ -6,6 +6,7 @@ Project Description
 
 ### Todo
 
+- [ ] ❗ Change the way search icon is positioned...problems in firefox  
 - [ ] Apply hover effects on hoverable elements  
 - [ ] Use observerAPI on pseudo elements with images  
 - [ ] Substitute mobile images on desktop view  
