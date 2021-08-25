@@ -465,7 +465,7 @@ About Us Section
     text-transform: uppercase;
 }
 /*=================
-Leader Section
+Leaders Section
 =================*/
 .leaders {
     padding-top: 6em;
@@ -531,10 +531,12 @@ Activities Section
     text-align: center;
     background: linear-gradient(90deg, var(--clr-black), var(--clr-black)), url("./assets/images/mobile/snowfield.webp") center / cover no-repeat;
     clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
-    z-index: -1;
 }
 .activities .row {
     display: block;
+}
+.activities__card{
+    z-index: 1;
 }
 .activities__card + .activities__card {
     margin-top: 4em;
@@ -558,6 +560,7 @@ Activities Section
     background: var(--clr-primary-light);
     text-transform: uppercase;
     margin-bottom: 0;
+    color: inherit;
 }
 /*=================
 Statistics Section
@@ -852,11 +855,13 @@ Footer
 .footer__developer a {
     color: white;
 }
+
 @media (min-width: 35.5em) {
     .leaders::before {
         min-height: 150vh;
     }
 }
+
 @media (min-width: 35.5em) and (max-width: 47.9375em) and (orientation: landscape) {
     /* mobile phones in landscape mode */
     .header__nav-list {
@@ -876,6 +881,7 @@ Footer
         margin-top: 10%;
     }
 }
+
 @media (min-width: 48em) {
     body {
         overflow: overlay;
@@ -997,18 +1003,8 @@ Footer
     .leaders::before {
         background: url("./assets/images/desktop/expedition.png") 65% center / cover no-repeat;
     }
-    .leaders::after {
-        min-height: min(45vh, 400px);
-    }
     .leaders__logo {
         margin-top: 9.5rem;
-    }
-    /*=================
-    Contact Us Section
-    =================*/
-    .contact-us {
-        clip-path: polygon(50% 3%, 52% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
-        margin-bottom: -0.5em; /* for white space probably caused by clip path */
     }
     /*=================
     Activities Section
@@ -1035,6 +1031,29 @@ Footer
     .activities__card-excerpt {
         margin: 0.8em 0 0;
         max-width: 40ch;
+    }
+    .activities__btn{
+        transition: all .4s;
+        position: relative;
+        overflow: hidden;
+    }
+    .activities__btn::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 20%;
+        transform: skew(30deg) translateX(0);
+        transition: all .3s ease-out;
+    }
+    .activities__btn:hover{
+        cursor: pointer;
+        background: var(--clr-black);
+    }
+    .activities__btn:hover::before{
+        background: rgba(255,255,255,.3);
+        left: 110%;
     }
     /*=================
     Statistics Section
@@ -1075,9 +1094,13 @@ Footer
     .client-reviews__img-wrapper {
         margin-top: auto;
     }
-    /*=================
+        /*=================
     Contact Us Section
     =================*/
+    .contact-us {
+        clip-path: polygon(50% 3%, 52% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
+        margin-bottom: -0.5em; /* for white space probably caused by clip path */
+    }
     .contact-us__map-wrapper {
         height: 350px;
     }
@@ -1095,6 +1118,7 @@ Footer
         width: min(40vw, 220px);
     }
 }
+
 @media (min-width: 58.75em) {
     /*=================
     Activities Section
