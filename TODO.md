@@ -6,18 +6,15 @@ Project Description
 
 ### Todo
 
+- [ ] 💡 IF things get too out of hand, add another div that looks like the slanted activities section and append it to the leaders section.  
 - [ ] ❗ Change the way search icon is positioned...problems in firefox  
-- [ ] Apply hover effects on hoverable elements  
 - [ ] Use observerAPI on pseudo elements with images  
-- [ ] Substitute mobile images on desktop view  
-- [ ] Convert statistics cards to 2x2 grid in tablet view  
 - [ ] ❓ Random flicker on chrome in mobile view when opening nav menu.  
 
 ### In Progress
 
+- [ ] ❕ Apply hover effects on hoverable elements  
 
 ### Done ✓
 
-- [x] Add social media icons to footer  
-- [x] Add testimonial cards  
 

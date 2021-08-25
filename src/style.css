@@ -903,7 +903,6 @@ Footer
     =================*/
     .header::before{
         background: linear-gradient(to top, var(--clr-black), var(--clr-black)), url("./assets/images/desktop/hero.webp") no-repeat center / cover;
-
     }
     .header__banner-logo,
     .leaders__logo {
@@ -951,7 +950,7 @@ Footer
         position: static;
         opacity: 1;
         width: 20px;
-        transform: translate(750%, -130%);
+        transform: translate(750%, -130%); /*todo: CHANGE THIS */
         transition: none;
     }
     .header__nav-list-container {
@@ -976,6 +975,7 @@ Footer
     }
     .header__nav-list-item a {
         font-size: clamp(0.8125rem, 0.8125rem + 0.3vw, 1rem);
+        font-family: var(--ff-primary);
         opacity: 1;
         transition: none;
     }
@@ -1019,11 +1019,10 @@ Footer
     .activities {
         padding-top: 10rem;
         text-align: left;
-        margin-top: -2rem;
-        /* margin-top: -19rem; longer screens  */
+        margin-top: -5rem;
     }
     .activities::before{
-        clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 13%, 100% 85%, 0 100%);
     }
     .activities .row {
         display: flex;
@@ -1140,6 +1139,7 @@ Footer
     }
     .activities::before{
         background: linear-gradient(90deg, var(--clr-black), var(--clr-black)), url("./assets/images/desktop/snowfield.webp") center / cover no-repeat;
+        clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
     }
     /*=================
     Statistics Section
@@ -1183,22 +1183,37 @@ Footer
     }
 }
 
+@media (min-width: 90em) {
+    .activities{
+        margin-top: -15vw;
+        padding-top: 13rem;
+    }
+    .client-reviews .row {
+        gap: 2.5rem;
+    }
+}
+
+@media (min-width: 160em){
+    .leaders{
+        margin-bottom: -10rem;
+    }
+    .leaders::before {
+        min-height: min(100vh, 700px);
+    }
+    .leaders__logo{
+        margin-top: 18rem;
+    }
+    .activities{
+        margin-top: -23vw;
+    }
+}
+
 @media (min-width: 48em) and (min-height: 64em) and (orientation: portrait) {
     /* Tablets in Portrait mode */
     .activities{
         margin-top: -45vh;
     }
 }
-
-@media (min-width: 90em) {
-     /*=================
-    Clients Reviews Section
-    =================*/
-    .client-reviews .row {
-        gap: 2.5rem;
-    }
-}
-
 
 @media (prefers-reduced-motion: reduce) {
     *,

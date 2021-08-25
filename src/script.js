@@ -2,10 +2,10 @@ const review_texts = [
     "One time I stumbled and tried to get a hold on someone for support, it was one of the tour guides. I haven't been able to lay hands off them ever since. Today we're happily married.",
     "How do these people know so much about the history of the places we visit wow. Will definitely try this again later this year. Awesome experience!",
     "Value for your money people! Thats exactly what these guys give you. NO CUP! wait... cup? cap? You get me.",
-    "Man the tour guides here definitely beat my history teachers hands down! Learnt a ton!",
+    "Man the tour guides here definitely beat my history teachers hands down! They really do know their stuff!",
     "Oh my God! The thrill of reaching the peak of these glorious mountains and shouting your name woosh! Can't wait to do it again!",
     "Didn't know my eyelashes could freeze at such heights geez. Luckily the tour guide helped defrost quickly, no injuries whatsoever. Great job.",
-    "Yoga on top of a mountain is actually as good it sounds guys! Check it out!",
+    "Yoga on top of a mountain is actually as good it sounds guys! I've never felt so whole and complete!",
 ];
 
 const nav_btn = document.querySelector(".header__toggle-btn");
