@@ -37,7 +37,7 @@ body {
     background: hsl(220, 6%, 95%);
     line-height: 1.5;
     position: relative;
-    overflow-x: hidden;
+    overflow: overlay;
 }
 img,
 iframe {
@@ -51,6 +51,15 @@ h2,
 h3 {
     font-family: var(--ff-accent);
     line-height: 1.1;
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 0%, 0.6);
+    border: 4px solid transparent;
+    background-clip: content-box;
+    border-radius: 20px;
 }
 /*=================
 Utility Classes
@@ -221,6 +230,9 @@ Main Header
     right: 1rem;
     transform: translateX(0);
     transition: transform 0.6s;
+}
+.header__toggle-btn:hover{
+    cursor: pointer;
 }
 .header.nav-active .header__toggle-btn {
     z-index: 99;
@@ -555,15 +567,37 @@ Activities Section
 .activities__img-wrapper {
     width: min(100%, 300px);
     min-height: 300px;
+    margin: 0 auto;
     border-radius: var(--radius);
     overflow: hidden;
-    margin: 0 auto;
 }
 .activities__btn {
+    position: relative;
     background: var(--clr-primary-light);
-    text-transform: uppercase;
     margin-bottom: 0;
     color: inherit;
+    text-transform: uppercase;
+    transition: all .4s;
+    overflow: hidden;
+}
+/* TODO: Change animation below */
+.activities__btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10%;
+    height: 100%;
+    width: 30%;
+    transform: skew(25deg) translateX(0);
+    transition: all .3s ease-out;
+}
+.activities__btn:hover{
+    cursor: pointer;
+    background: var(--clr-black);
+}
+.activities__btn:hover::before{
+    background: rgba(255,255,255,.3);
+    left: 120%;
 }
 /*=================
 Statistics Section
@@ -886,18 +920,6 @@ Footer
 }
 
 @media (min-width: 48em) {
-    body {
-        overflow: overlay;
-    }
-    ::-webkit-scrollbar {
-        width: 15px;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: hsla(0, 0%, 0%, 0.6);
-        border: 4px solid transparent;
-        background-clip: content-box;
-        border-radius: 20px;
-    }
     /*=================
     Header Section
     =================*/
@@ -1041,29 +1063,6 @@ Footer
     .activities__card-excerpt {
         margin: 0.8em 0 0;
         max-width: 40ch;
-    }
-    .activities__btn{
-        transition: all .4s;
-        position: relative;
-        overflow: hidden;
-    }
-    .activities__btn::before{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 20%;
-        transform: skew(30deg) translateX(0);
-        transition: all .3s ease-out;
-    }
-    .activities__btn:hover{
-        cursor: pointer;
-        background: var(--clr-black);
-    }
-    .activities__btn:hover::before{
-        background: rgba(255,255,255,.3);
-        left: 110%;
     }
     /*=================
     Statistics Section
