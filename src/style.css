@@ -295,6 +295,7 @@ Main Header
 .header__search {
     background: transparent;
     border: none;
+    padding-right: 1.8em;
     outline: none;
     color: white;
     font-size: 0.9rem;
@@ -349,7 +350,6 @@ Main Header
     padding: 2em;
     background: var(--clr-primary);
     list-style-type: none;
-    overflow-y: auto;
 }
 .header__nav-list-item {
     padding: 0.5em 0;
@@ -578,6 +578,7 @@ Activities Section
 =================*/
 .activities {
     --clr-black: hsla(220, 25%, 16%, 0.8);
+    --bg-img: none;
 
     position: relative;
     width: 100%;
@@ -585,12 +586,13 @@ Activities Section
     text-align: center;
     padding: 13em 0 8em;
     margin-top: -6.5rem;
+    overflow: hidden;
 }
 .activities::before{
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(var(--clr-black), var(--clr-black)), url("./assets/images/mobile/snowfield.webp") center / cover no-repeat;
+    background: var(--bg-img);
     clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
     z-index: -2;
 }
@@ -1049,10 +1051,11 @@ Footer
         pointer-events: all;
     }
     .header__search-icon {
-        position: static;
-        opacity: 1;
+        position: absolute;
+        top: 40%;
+        right: 0;
         width: 20px;
-        transform: translate(750%, -130%); /*todo: CHANGE THIS */
+        opacity: 1;
         transition: none;
     }
     .header__nav-list-container {
@@ -1133,6 +1136,10 @@ Footer
         background: url("./assets/images/desktop/expedition.png") 65% top / cover no-repeat;
         min-height: min(100vh, 650px);
     }
+    .leaders::after{
+        min-height: min(35vw, 400px);
+        animation-duration: 180s;
+    }
     .leaders__logo {
         margin-top: 9.5rem;
     }
@@ -1205,7 +1212,7 @@ Footer
         gap: 1rem;
     }
     .client-reviews__quotes {
-        width: min-content;
+        width: fit-content;
         margin: 0 auto;
     }
     .client-reviews__card {
@@ -1261,7 +1268,6 @@ Footer
         margin-top: -13vw;
     }
     .activities::before{
-        background: linear-gradient(90deg, var(--clr-black), var(--clr-black)), url("./assets/images/desktop/snowfield.webp") center / cover no-repeat;
         clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
     }
     /*=================
@@ -1339,6 +1345,10 @@ Footer
     }
     .leaders::before {
         min-height: min(100vh, 700px);
+    }
+    .leaders::after{
+        top: 8%;
+        min-height: min(45vw, 550px);
     }
     .leaders__logo{
         margin-top: 18rem;

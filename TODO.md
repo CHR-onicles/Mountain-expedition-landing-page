@@ -6,16 +6,15 @@ Project Description
 
 ### Todo
 
-- [ ] 💡 IF things get too out of hand, add another div that looks like the slanted activities section and append it to the leaders section.  
-- [ ] ❗ Change the way search icon is positioned...problems in firefox  
 - [ ] Modify delay of About Us section elements  
-- [ ] Use observerAPI on pseudo elements with images  
 - [ ] ❓ Random flicker on chrome in mobile view when opening nav menu.  
 
 ### In Progress
 
-- [ ] ❕ Apply hover effects on hoverable elements  
+- [ ] Use observerAPI on pseudo elements with images  
 
 ### Done ✓
 
+- [x] ❗ Change the way search icon is positioned...problems in firefox  
+- [x] ❕ Apply hover effects on hoverable elements  
 
