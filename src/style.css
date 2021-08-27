@@ -79,7 +79,7 @@ Utility Classes
 .fade-in-top,
 .fade-in-bottom {
     opacity: 0;
-    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.7s, opacity 0.7s;
 }
 .fade-in-left {
     transform: translateX(-20px);
@@ -615,6 +615,16 @@ Activities Section
     border-radius: var(--radius);
     overflow: hidden;
 }
+.activities__img-wrapper img {
+    transition: transform .5s;
+    /* Useful Beizer curve => cubic-bezier(0.68, -0.55, 0.265, 1.55); */
+}
+.activities__img-wrapper:hover{
+    cursor: pointer;
+}
+.activities__img-wrapper:hover img {
+    transform: scale(1.1);
+}
 .activities__btn {
     color: var(--clr-white);
     background: var(--clr-primary-light);
@@ -777,11 +787,14 @@ Client Reviews Section
 .client-reviews__card {
     padding: 1em;
     border-radius: var(--radius);
-    margin: 1.5em auto;
+    margin: 2em auto;
     max-width: 28.125rem;
     min-height: 16.875rem;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     color: var(--clr-black);
+}
+.client-reviews__card:nth-child(1){
+    margin-top: 2.5em;
 }
 .client-reviews__quotes {
     height: 30px;
@@ -893,6 +906,7 @@ Contact Us Section
     cursor: pointer;
     background: var(--clr-primary-v-light);
     color: var(--clr-primary-dark);
+    transform: scale(1.1);
 }
 /*=================
 Footer
@@ -936,6 +950,13 @@ Footer
     height: 35px;
     border: 1px solid var(--clr-primary-v-light);
     border-radius: 50%;
+    transition: all .4s;
+}
+.footer__social-icon:hover{
+    cursor: pointer;
+    transform: translateY(-20%) scale(1.1);
+    background: rgba(255,255,255,.2);
+    border: none;
 }
 .footer__social-icon svg {
     fill: var(--clr-white);
@@ -1055,10 +1076,31 @@ Footer
         margin-top: 0.5em;
     }
     .header__nav-list-item a {
+        position: relative;
         font-size: clamp(0.8125rem, 0.8125rem + 0.3vw, 1rem);
         font-family: var(--ff-primary);
         opacity: 1;
         transition: none;
+        overflow: hidden;
+    }
+    .header__nav-list-item a::before,
+    .footer__nav-list-item a::before,
+    .footer__developer a::before{
+        content: "";
+        position: absolute;
+        bottom: -25%;
+        right: 0;
+        width: 0;
+        height: 2px;
+        border-radius: 10px;
+        background: var(--clr-white);
+        transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+        .header__nav-list-item a:hover::before,
+        .footer__nav-list-item a:hover::before,
+        .footer__developer a:hover::before{
+            left: 0;
+            width: 100%;
     }
     /*=================
     About Us Section
@@ -1156,6 +1198,9 @@ Footer
         display: flex;
         flex-direction: column;
     }
+    .client-reviews__card:nth-child(1){
+        margin-top: 2em;
+    }
     .client-reviews__review-text {
         padding-bottom: 1em;
     }
@@ -1181,9 +1226,15 @@ Footer
         width: min(60%, 380px);
         margin: 1em auto;
     }
+    .footer__nav-list-item a{
+        position: relative;
+    }
     .footer__social-icons {
         grid-area: social-icons;
         width: min(40vw, 220px);
+    }
+    .footer__developer a{
+        position: relative;
     }
 }
 

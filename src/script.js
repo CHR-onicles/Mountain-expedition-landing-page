@@ -43,7 +43,7 @@ nav_btn.addEventListener("click", () => {
 /* Observer for fading elements */
 const fadeObserverOptions = {
     rootMargin: "0px",
-    threshold: 0.3,
+    threshold: 1,
 };
 
 const fadeObserver = new IntersectionObserver((entries, fadeObserver) => {
