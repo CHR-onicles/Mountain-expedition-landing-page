@@ -11,10 +11,10 @@ Project Description
 
 ### In Progress
 
-- [ ] Use observerAPI on pseudo elements with images  
 
 ### Done ✓
 
+- [x] Use observerAPI on pseudo elements with images  
 - [x] ❗ Change the way search icon is positioned...problems in firefox  
 - [x] ❕ Apply hover effects on hoverable elements  
 
