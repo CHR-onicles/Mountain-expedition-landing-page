@@ -590,7 +590,7 @@ Activities Section
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, var(--clr-black), var(--clr-black)), url("./assets/images/mobile/snowfield.webp") center / cover no-repeat;
+    background: linear-gradient(var(--clr-black), var(--clr-black)), url("./assets/images/mobile/snowfield.webp") center / cover no-repeat;
     clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
     z-index: -2;
 }
@@ -1136,6 +1136,20 @@ Footer
     .leaders__logo {
         margin-top: 9.5rem;
     }
+    /* .leaders__helper{
+        --clr-black: hsla(220, 25%, 16%, 0.8);
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        min-height: 200px;
+        width: 100%;
+        background: linear-gradient(var(--clr-black), var(--clr-black)),
+         url("./assets/images/desktop/snowfield.webp") top / cover no-repeat;
+        z-index: -2;
+        opacity: 1;
+        clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 85%);
+    } */
     /*=================
     Activities Section
     =================*/
@@ -1292,6 +1306,23 @@ Footer
     }
 }
 
+@media (min-width: 50.75em) and (max-height: 40em) and (orientation: landscape){
+    /* Long-af-but-small-width phones in landscape mode */
+    .header__banner-logo{
+        width: min(20vw, 200px);
+        margin-top: 25vh;
+    }
+    .header__heading {
+        margin-top: 1rem;
+        font-size: clamp(2.3rem, 2.3rem + 2.3vw, 4rem);
+    }
+      .header__intro-text {
+        font-size: clamp(0.8125rem, 0.8125rem + 0.3vw, 1.3rem);
+        margin-top: 1rem;
+        padding-bottom: 2rem;
+    }
+}
+
 @media (min-width: 90em) {
     .activities{
         margin-top: -15vw;
@@ -1314,6 +1345,14 @@ Footer
     }
     .activities{
         margin-top: -23vw;
+    }
+    .droplet:nth-child(1){
+        top: 4vw;
+        left: 28vw;
+    }
+    .droplet:nth-child(2){
+        bottom: 2vw;
+        right: 29vw;
     }
 }
 
