@@ -1315,7 +1315,7 @@ Footer
     }
 }
 
-@media (min-width: 50.75em) and (max-height: 40em) and (orientation: landscape){
+@media (min-width: 48em) and (max-height: 40em) and (orientation: landscape){
     /* Long-af-but-small-width phones in landscape mode */
     .header__banner-logo{
         width: min(20vw, 200px);
