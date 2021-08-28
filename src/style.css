@@ -1216,7 +1216,7 @@ Footer
         gap: 1rem;
     }
     .client-reviews__quotes {
-        width: fit-content;
+        width: auto;
         margin: 0 auto;
     }
     .client-reviews__card {
