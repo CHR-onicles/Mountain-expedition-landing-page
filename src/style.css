@@ -976,6 +976,7 @@ Footer
     color: white;
 }
 
+/* TODO: Cross check this */
 @media (min-width: 35.5em) {
     .leaders::before {
         min-height: min(150vh, 640px);
@@ -1131,43 +1132,31 @@ Footer
     Leader Section
     =================*/
     .leaders{
-        margin-bottom: -7rem;
+        margin-bottom: 0;
+        min-height: auto;
     }
     .leaders::before {
         background: url("./assets/images/desktop/expedition.png") 65% top / cover no-repeat;
-        min-height: min(100vh, 650px);
+        min-height: min(70vh, 500px);
     }
     .leaders::after{
         min-height: min(35vw, 400px);
         animation-duration: 180s;
     }
     .leaders__logo {
-        margin-top: 9.5rem;
+        margin-top: 5rem;
     }
-    /* .leaders__helper{
-        --clr-black: hsla(220, 25%, 16%, 0.8);
-
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        min-height: 200px;
-        width: 100%;
-        background: linear-gradient(var(--clr-black), var(--clr-black)),
-         url("./assets/images/desktop/snowfield.webp") top / cover no-repeat;
-        z-index: -2;
-        opacity: 1;
-        clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 85%);
-    } */
     /*=================
     Activities Section
     =================*/
     .activities {
-        padding-top: 10rem;
+        padding-top: 7rem;
         text-align: left;
-        margin-top: -5rem;
+        margin-top: -3rem;
     }
     .activities::before{
-        clip-path: polygon(0 0, 100% 13%, 100% 85%, 0 100%);
+        margin-top: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     }
     .activities .row {
         display: flex;
@@ -1262,17 +1251,7 @@ Footer
     }
 }
 
-
 @media (min-width: 58.75em) {
-    /*=================
-    Activities Section
-    =================*/
-    .activities{
-        margin-top: -13vw;
-    }
-    .activities::before{
-        clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
-    }
     /*=================
     Statistics Section
     =================*/
@@ -1330,12 +1309,14 @@ Footer
         margin-top: 1rem;
         padding-bottom: 2rem;
     }
+    .leaders::before{
+        min-height: min(150vh, 700px);
+    }
 }
 
 @media (min-width: 90em) {
-    .activities{
-        margin-top: -15vw;
-        padding-top: 13rem;
+    .leaders::before{
+        min-height: min(40vw, 600px);
     }
     .client-reviews .row {
         gap: 2.5rem;
@@ -1343,9 +1324,6 @@ Footer
 }
 
 @media (min-width: 160em){
-    .leaders{
-        margin-bottom: -10rem;
-    }
     .leaders::before {
         min-height: min(100vh, 700px);
     }
@@ -1356,9 +1334,6 @@ Footer
     .leaders__logo{
         margin-top: 18rem;
     }
-    .activities{
-        margin-top: -23vw;
-    }
     .droplet:nth-child(1){
         top: 4vw;
         left: 28vw;
@@ -1366,13 +1341,6 @@ Footer
     .droplet:nth-child(2){
         bottom: 2vw;
         right: 29vw;
-    }
-}
-
-@media (min-width: 48em) and (min-height: 64em) and (orientation: portrait) {
-    /* Tablets in Portrait mode */
-    .activities{
-        margin-top: -45vh;
     }
 }
 
