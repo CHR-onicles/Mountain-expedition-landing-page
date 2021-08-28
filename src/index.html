@@ -25,7 +25,7 @@
                     </button>
                     <span class="header__language">EN</span>
                     <div class="header__search-wrapper">
-                        <input class="header__search" type="text">
+                        <input class="header__search" type="text" aria-label="Search">
                         <svg class="header__search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z" style="fill:none;stroke-miterlimit:10;stroke-width:32px"/><line x1="338.29" y1="338.29" x2="448" y2="448" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/></svg>
                     </div>
                     <div class="header__nav-list-container">
@@ -64,11 +64,11 @@
                         <p class="about__text fade fade-in-left delay-p5"><strong>Mountain Expedition</strong> is a fast growing Swiss-based group founded
                             by an extraterrestrial. Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quas.
                         </p>
-                        <p class="about__text fade fade-in-right delay-p5">Our work <strong>culture</strong> is second to none dolor, sit amet consectetur adipisicing elit. Inventore delectus aliquid, similique error ratione nisi.</p>
+                        <p class="about__text fade fade-in-right delay-1">Our work <strong>culture</strong> is second to none dolor, sit amet consectetur adipisicing elit. Inventore delectus aliquid, similique error ratione nisi.</p>
                     </div>
                     <div class="col">
                         <p class="about__text fade fade-in-bottom delay-p5">We <strong>prioritize</strong> customer satisfaction dolor sit amet consectetur adipisicing elit. Rem itaque nostrum quod iusto! Sint amet adipisci modi voluptatum iste qui. Maxime ex temporibus vitae praesentium dolorum quas sed inventore dolore?</p>
-                        <a href="#" class="about__about-btn fade fade-in-bottom delay-p5">Learn More</a>
+                        <a href="#" class="about__about-btn fade fade-in-bottom delay-1">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -126,7 +126,7 @@
             <div class="droplet" aria-hidden="true"></div>
             <div class="droplet" aria-hidden="true"></div>
             <div class="container">
-                <h2 class="statistics__heading">Statistics</h>
+                <h2 class="statistics__heading">Statistics</h2>
                 <p class="statistics__sub-heading">The numbers don't lie</p>
                 <div class="row">
                     <article class="statistics__card">
@@ -175,20 +175,22 @@
                     </div>
                     <div class="col">
                         <h2 class="contact-us__heading">Get in touch!</h2>
-                        <div class="contact-us__wrapper">
-                            <svg class="contact-us__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M332.64,64.58C313.18,43.57,286,32,256,32c-30.16,0-57.43,11.5-76.8,32.38-19.58,21.11-29.12,49.8-26.88,80.78C156.76,206.28,203.27,256,256,256s99.16-49.71,103.67-110.82C361.94,114.48,352.34,85.85,332.64,64.58Z"/><path d="M432,480H80A31,31,0,0,1,55.8,468.87c-6.5-7.77-9.12-18.38-7.18-29.11C57.06,392.94,83.4,353.61,124.8,326c36.78-24.51,83.37-38,131.2-38s94.42,13.5,131.2,38c41.4,27.6,67.74,66.93,76.18,113.75,1.94,10.73-.68,21.34-7.18,29.11A31,31,0,0,1,432,480Z"/></svg>
-                            <input class="contact-us__name-input" type="text"  placeholder="Name">
+                        <form>
+                            <div class="contact-us__wrapper">
+                                <svg class="contact-us__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M332.64,64.58C313.18,43.57,286,32,256,32c-30.16,0-57.43,11.5-76.8,32.38-19.58,21.11-29.12,49.8-26.88,80.78C156.76,206.28,203.27,256,256,256s99.16-49.71,103.67-110.82C361.94,114.48,352.34,85.85,332.64,64.58Z"/><path d="M432,480H80A31,31,0,0,1,55.8,468.87c-6.5-7.77-9.12-18.38-7.18-29.11C57.06,392.94,83.4,353.61,124.8,326c36.78-24.51,83.37-38,131.2-38s94.42,13.5,131.2,38c41.4,27.6,67.74,66.93,76.18,113.75,1.94,10.73-.68,21.34-7.18,29.11A31,31,0,0,1,432,480Z"/></svg>
+                                <input class="contact-us__name-input" type="text"  placeholder="Name" aria-label="Name">
+                            </div>
+                            <div class="contact-us__wrapper">
+                                <svg class="contact-us__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M424,80H88a56.06,56.06,0,0,0-56,56V376a56.06,56.06,0,0,0,56,56H424a56.06,56.06,0,0,0,56-56V136A56.06,56.06,0,0,0,424,80Zm-14.18,92.63-144,112a16,16,0,0,1-19.64,0l-144-112a16,16,0,1,1,19.64-25.26L256,251.73,390.18,147.37a16,16,0,0,1,19.64,25.26Z"/></svg>
+                                <input class="contact-us__email-input" type="email" placeholder="Email" aria-label="Email">
+                            </div>
+                            <div class="contact-us__wrapper">
+                                <svg class="contact-us__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M391,480c-19.52,0-46.94-7.06-88-30-49.93-28-88.55-53.85-138.21-103.38C116.91,298.77,93.61,267.79,61,208.45c-36.84-67-30.56-102.12-23.54-117.13C45.82,73.38,58.16,62.65,74.11,52A176.3,176.3,0,0,1,102.75,36.8c1-.43,1.93-.84,2.76-1.21,4.95-2.23,12.45-5.6,21.95-2,6.34,2.38,12,7.25,20.86,16,18.17,17.92,43,57.83,52.16,77.43,6.15,13.21,10.22,21.93,10.23,31.71,0,11.45-5.76,20.28-12.75,29.81-1.31,1.79-2.61,3.5-3.87,5.16-7.61,10-9.28,12.89-8.18,18.05,2.23,10.37,18.86,41.24,46.19,68.51s57.31,42.85,67.72,45.07c5.38,1.15,8.33-.59,18.65-8.47,1.48-1.13,3-2.3,4.59-3.47,10.66-7.93,19.08-13.54,30.26-13.54h.06c9.73,0,18.06,4.22,31.86,11.18,18,9.08,59.11,33.59,77.14,51.78,8.77,8.84,13.66,14.48,16.05,20.81,3.6,9.53.21,17-2,22-.37.83-.78,1.74-1.21,2.75a176.49,176.49,0,0,1-15.29,28.58c-10.63,15.9-21.4,28.21-39.38,36.58A67.42,67.42,0,0,1,391,480Z"/></svg>
+                                <input class="contact-us__tel-input" placeholder="Telephone" aria-label="Telephone">
+                            </div>
+                            <button class="contact-us__submit-btn" type="submit">Contact now</button>
                         </div>
-                        <div class="contact-us__wrapper">
-                            <svg class="contact-us__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>ionicons-v5-o</title><path d="M424,80H88a56.06,56.06,0,0,0-56,56V376a56.06,56.06,0,0,0,56,56H424a56.06,56.06,0,0,0,56-56V136A56.06,56.06,0,0,0,424,80Zm-14.18,92.63-144,112a16,16,0,0,1-19.64,0l-144-112a16,16,0,1,1,19.64-25.26L256,251.73,390.18,147.37a16,16,0,0,1,19.64,25.26Z"/></svg>
-                            <input class="contact-us__email-input" type="email" placeholder="Email">
-                        </div>
-                        <div class="contact-us__wrapper">
-                            <svg class="contact-us__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>ionicons-v5-g</title><path d="M391,480c-19.52,0-46.94-7.06-88-30-49.93-28-88.55-53.85-138.21-103.38C116.91,298.77,93.61,267.79,61,208.45c-36.84-67-30.56-102.12-23.54-117.13C45.82,73.38,58.16,62.65,74.11,52A176.3,176.3,0,0,1,102.75,36.8c1-.43,1.93-.84,2.76-1.21,4.95-2.23,12.45-5.6,21.95-2,6.34,2.38,12,7.25,20.86,16,18.17,17.92,43,57.83,52.16,77.43,6.15,13.21,10.22,21.93,10.23,31.71,0,11.45-5.76,20.28-12.75,29.81-1.31,1.79-2.61,3.5-3.87,5.16-7.61,10-9.28,12.89-8.18,18.05,2.23,10.37,18.86,41.24,46.19,68.51s57.31,42.85,67.72,45.07c5.38,1.15,8.33-.59,18.65-8.47,1.48-1.13,3-2.3,4.59-3.47,10.66-7.93,19.08-13.54,30.26-13.54h.06c9.73,0,18.06,4.22,31.86,11.18,18,9.08,59.11,33.59,77.14,51.78,8.77,8.84,13.66,14.48,16.05,20.81,3.6,9.53.21,17-2,22-.37.83-.78,1.74-1.21,2.75a176.49,176.49,0,0,1-15.29,28.58c-10.63,15.9-21.4,28.21-39.38,36.58A67.42,67.42,0,0,1,391,480Z"/></svg>
-                            <input class="contact-us__tel-input" placeholder="Telephone">
-                        </div>
-                        <button class="contact-us__submit-btn" type="button">Contact now</button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </section>

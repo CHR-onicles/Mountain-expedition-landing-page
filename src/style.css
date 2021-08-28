@@ -768,6 +768,7 @@ Statistics Section
     font-size: 3rem;
     font-family: var(--ff-accent);
     color: var(--clr-black);
+    font-weight: bold;
 }
 .statistics__desc {
     display: inline-block;
@@ -1195,6 +1196,9 @@ Footer
     }
     .droplet:nth-child(2){
         right: 32vw;
+    }
+    .statistics__sub-heading{
+        margin-bottom: 1em;
     }
     .statistics .row {
         display: flex;
