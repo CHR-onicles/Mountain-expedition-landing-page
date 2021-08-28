@@ -6,7 +6,7 @@ Project Description
 
 ### Todo
 
-- [ ] ❓ Random flicker on chrome in mobile view when opening nav menu.  
+- [ ] ❗ Keep track and delete all slanted section related rules  
 
 ### In Progress
 
