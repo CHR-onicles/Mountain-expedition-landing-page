@@ -515,7 +515,7 @@ Leaders Section
     position: relative;
     min-height: auto;
     padding-top: 6em;
-    margin-bottom: 0;
+    margin-bottom: -3rem;
     background: linear-gradient(hsla(212, 12%, 51%, 0.3), hsla(212, 12%, 51%, 0));
     border: none;
     color: white;
@@ -574,7 +574,7 @@ Activities Section
     color: white;
     text-align: center;
     padding: 13em 0 8em;
-    margin-top: -6rem;
+    /* margin-top: -6rem; */
     overflow: hidden;
 }
 .activities::before{
@@ -1137,7 +1137,7 @@ Footer
     .activities {
         padding-top: 7rem;
         text-align: left;
-        margin-top: -3rem;
+        /* margin-top: -3rem; */
     }
     .activities::before{
         margin-top: 0;

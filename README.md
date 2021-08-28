@@ -1,2 +1,3 @@
 # Mountain-expedition-landing-page
- Landing Page for a mountain expedition group concept.
+
+ Landing Page for a Mountain Expedition Club concept.
