@@ -1255,7 +1255,6 @@ Footer
         position: relative;
     }
     .footer__social-icons {
-        grid-area: social-icons;
         width: min(40vw, 220px);
     }
     .footer__developer a{
