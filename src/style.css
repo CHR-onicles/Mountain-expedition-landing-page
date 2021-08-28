@@ -93,12 +93,6 @@ Utility Classes
 .fade-in-bottom {
     transform: translateY(20px);
 }
-.delay-p3 {
-    transition-delay: 0.3s;
-}
-.delay-p4 {
-    transition-delay: 0.4s;
-}
 .delay-p5 {
     transition-delay: 0.5s;
 }
@@ -108,14 +102,8 @@ Utility Classes
 .delay-1p5 {
     transition-delay: 1.5s;
 }
-.delay-2 {
-    transition-delay: 2s;
-}
-.delay-2p5 {
-    transition-delay: 2.5s;
-}
 .appear {
-    opacity: 1;
+    opacity: 1 !important;
     transform: translate(0);
 }
 /*=================
@@ -176,7 +164,7 @@ Animations
         border-radius: 26% 71% 43% 48% / 52% 58% 62% 70%;
     }
     40% {
-        border-radius: 16% 78% 33% 50% / 29% 78% 32% 20%;
+        border-radius: 20% 70% 33% 50% / 39% 78% 42% 65%;
     }
     50% {
         border-radius: 40% 28% 50% 45% / 19% 68% 40% 35%;
@@ -253,7 +241,7 @@ Main Header
     top: 1rem;
     right: 1rem;
     transform: translateX(0);
-    transition: transform 0.6s;
+    transition: transform 0.4s;
 }
 .header__toggle-btn:hover{
     cursor: pointer;
@@ -524,9 +512,10 @@ About Us Section
 Leaders Section
 =================*/
 .leaders {
-    padding-top: 6em;
     position: relative;
-    min-height: 100vh;
+    min-height: auto;
+    padding-top: 6em;
+    margin-bottom: 0;
     background: linear-gradient(hsla(212, 12%, 51%, 0.3), hsla(212, 12%, 51%, 0));
     border: none;
     color: white;
@@ -585,7 +574,7 @@ Activities Section
     color: white;
     text-align: center;
     padding: 13em 0 8em;
-    margin-top: -6.5rem;
+    margin-top: -6rem;
     overflow: hidden;
 }
 .activities::before{
@@ -593,7 +582,7 @@ Activities Section
     position: absolute;
     inset: 0;
     background: var(--bg-img);
-    clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
     z-index: -2;
 }
 .activities .row {
@@ -1101,11 +1090,11 @@ Footer
         background: var(--clr-white);
         transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
-        .header__nav-list-item a:hover::before,
-        .footer__nav-list-item a:hover::before,
-        .footer__developer a:hover::before{
-            left: 0;
-            width: 100%;
+    .header__nav-list-item a:hover::before,
+    .footer__nav-list-item a:hover::before,
+    .footer__developer a:hover::before{
+        left: 0;
+        width: 100%;
     }
     /*=================
     About Us Section
@@ -1131,10 +1120,6 @@ Footer
     /*=================
     Leader Section
     =================*/
-    .leaders{
-        margin-bottom: 0;
-        min-height: auto;
-    }
     .leaders::before {
         background: url("./assets/images/desktop/expedition.png") 65% top / cover no-repeat;
         min-height: min(70vh, 500px);

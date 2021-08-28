@@ -30,7 +30,7 @@ setTimeout(() => {
     banner_elements.forEach((el) => {
         el.classList.add("appear");
     });
-}, 2000);
+}, 1500);
 
 nav_btn.addEventListener("click", () => {
     nav_container.classList.toggle("nav-active");
@@ -44,17 +44,11 @@ nav_btn.addEventListener("click", () => {
 /* Observer for fading elements */
 const fadeObserverOptions = {
     rootMargin: "0px",
-    threshold: 1,
+    threshold: 0.7,
 };
 
 const fadeObserver = new IntersectionObserver((entries, fadeObserver) => {
     entries.forEach((entry) => {
-        if (entry.target.classList[0].includes("header__")) {
-            setTimeout(() => {
-                entry.target.classList.add("appear");
-            }, 2000);
-            console.log(entry.target.classList);
-        }
         if (!entry.isIntersecting) {
             entry.target.classList.remove("appear");
         } else {
@@ -146,7 +140,7 @@ const clientReviewsObserver = new IntersectionObserver((entries, clientReviewsOb
             clientReviewsObserver.unobserve(entry.target);
         }
     })
-}, clientReviewsObserverOptions)
+}, clientReviewsObserverOptions);
 
 clientReviewsObserver.observe(client_reviews_section);
 /* End Observer for Client Reviews */
@@ -158,9 +152,20 @@ async function getClients() {
 
     client_row.innerHTML = "";
 
-    results.forEach(({ picture, name, location }) => {
+    results.forEach(({ picture, name, location }, index) => {
         let card = document.createElement("article");
         card.classList.add("client-reviews__card");
+        switch (index) {
+            case 0:
+                card.classList.add("fade","fade-in-left");
+                break;
+            case 1:
+                card.classList.add("fade", "fade-in-bottom");
+            case 2:
+                card.classList.add("fade", "fade-in-right");
+            default:
+                break;
+        }
         card.innerHTML = `<img class="client-reviews__quotes" src="./assets/images/quote-img.png" alt="Bold quotes">
         <p class="client-reviews__review-text">${rand_review.next().value}</p>
         <div class="client-reviews__img-wrapper">
@@ -170,6 +175,7 @@ async function getClients() {
         <p class="client-reviews__location">${location.city}, ${location.country}</p>`;
 
         client_row.appendChild(card);
+        fadeObserver.observe(card);
     });
 }
 

@@ -6,7 +6,6 @@ Project Description
 
 ### Todo
 
-- [ ] ❗ Keep track and delete all slanted section related rules  
 
 ### In Progress
 
