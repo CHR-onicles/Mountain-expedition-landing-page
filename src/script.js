@@ -21,8 +21,17 @@ const search = document.querySelector(".header__search");
 const client_reviews_section = document.querySelector(".client-reviews");
 const client_row = document.querySelector(".client-reviews .row");
 const client_card = document.querySelectorAll(".clients-reviews__card");
+const leaders_section = document.querySelector(".leaders");
 
 const no_motion_media_query = window.matchMedia("(prefers-reduced-motion: reduce)");
+let dont_check = false;
+if (no_motion_media_query.matches){
+    counter_cards.forEach((card) => {
+        card.children[1].innerText = card.children[1].getAttribute("data-target");
+        console.log("first check");
+        dont_check = true;
+    })
+}
 let rand_review = getRandomReviewText(review_texts);
 
 setTimeout(() => {
@@ -85,7 +94,7 @@ const counterObserver = new IntersectionObserver((entries, counterObserver) => {
             const updateStatsNumber = () => {
                 const target = +stats_number_el.getAttribute("data-target"); // + symbol converts string to Number
                 const text = +stats_number_el.innerText;
-                const increment = target / (target - 1);
+                const increment = target / (target - 3);
                 if (text < target) {
                     stats_number_el.innerText = `${Math.ceil(text + increment)}`;
                     setTimeout(updateStatsNumber, 1);
@@ -100,9 +109,11 @@ const counterObserver = new IntersectionObserver((entries, counterObserver) => {
     });
 }, counterObserverOptions);
 
-counter_cards.forEach((card) => {
-    counterObserver.observe(card);
-});
+if (dont_check === false){
+    counter_cards.forEach((card) => {
+        counterObserver.observe(card);
+    });
+}
 /* End Observer for Counters */
 
 /* Observer for Back To Top button */
@@ -111,7 +122,7 @@ const BackToTopObserverOptions = {
     threshold: 0,
 };
 
-const BackToTopObserver = new IntersectionObserver((entries, BackToTopObserver) => {
+const BackToTopObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (!entry.isIntersecting) {
             back_to_top.classList.add("active");
@@ -189,3 +200,22 @@ function* getRandomReviewText() {
     }
 }
 /* End Fetching Users For Reviews */
+
+/* Observer for Leader Section (cloud animation) */
+leadersSectionOptions = {
+    rootMargin: "200px 0px",
+    threshold: 0
+}
+
+leadersSectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting){
+            return;
+        } else {
+            entry.target.style.setProperty("--cloud-animation", "clouds 120s linear infinite");
+        }
+    });
+});
+
+leadersSectionObserver.observe(leaders_section);
+/* End Observer for Leader Section */
