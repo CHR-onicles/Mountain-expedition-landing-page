@@ -567,7 +567,7 @@ Activities Section
 =================*/
 .activities {
     --clr-black: hsla(220, 25%, 16%, 0.8);
-    --bg-img: none;
+    --bg-img: none; /* todo: remove */
 
     position: relative;
     width: 100%;
@@ -581,7 +581,7 @@ Activities Section
     content: "";
     position: absolute;
     inset: 0;
-    background: var(--bg-img);
+    background: linear-gradient(var(--clr-black), var(--clr-black)), url("./assets/images/mobile/snowfield.webp") center / cover no-repeat;
     clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
     z-index: -2;
 }
@@ -1141,6 +1141,7 @@ Footer
     }
     .activities::before{
         margin-top: 0;
+        background: linear-gradient(var(--clr-black), var(--clr-black)), url("./assets/images/desktop/snowfield.webp") center / cover no-repeat;
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     }
     .activities .row {

@@ -215,5 +215,5 @@ const  activitiesBgObserver = new IntersectionObserver((entries, activitiesBgObs
     });
 });
 
-activitiesBgObserver.observe(activities_section);
+// activitiesBgObserver.observe(activities_section);
 /* End Observer for Activities Section Background Image */
