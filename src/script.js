@@ -198,7 +198,7 @@ function* getRandomReviewText() {
     for a better user experience hence it not being here. */ 
 
 const activitiesBgOptions = {
-    rootMargin: "400px 0",
+    rootMargin: "700px 0",
     threshold: 0
 }
 
