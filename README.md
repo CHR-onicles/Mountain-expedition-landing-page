@@ -42,7 +42,7 @@ This is a landing page concept for a Mountain Expedition Club inspired by a [pos
 
 ### What I learned
 I learnt about optimizing images for the web, animations and transitions, how to consume an API using JS Promises and how to observe elements efficiently with the IntersectionObserver API.
-<br>I also learnt about the animation preference of users (especially those with impairments) and how to respect them.
+<br>I also learnt about the animation preference of users (especially those with impairment) and how to respect them.
 
 
 ## Author
