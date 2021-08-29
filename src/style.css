@@ -515,25 +515,17 @@ Leaders Section
     position: relative;
     min-height: auto;
     padding-top: 6em;
-    margin-bottom: -3rem;
     background: linear-gradient(hsla(212, 12%, 51%, 0.3), hsla(212, 12%, 51%, 0));
     border: none;
     color: white;
     text-align: center;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .leaders .container {
     z-index: 1;
 }
 .leaders__logo {
     margin-top: 6em;
-}
-.leaders__heading {
-    --clr-black: hsla(220, 15%, 16%, 0.4);
-
-    margin-top: 0.5em;
-    font-size: 2rem;
-    text-shadow: 0 0 10px var(--clr-black), 0 0 20px var(--clr-black), 0 0 50px var(--clr-black);
 }
 .leaders::before {
     content: "";
@@ -558,9 +550,17 @@ Leaders Section
     z-index: -1;
     animation: clouds 120s linear infinite;
 }
+.leaders__heading {
+    --clr-black: hsla(220, 15%, 16%, 0.4);
+
+    margin-top: 0.5em;
+    font-size: 2rem;
+    text-shadow: 0 0 10px var(--clr-black), 0 0 20px var(--clr-black), 0 0 50px var(--clr-black);
+}
 .leaders__text {
     margin: 1em auto 0;
     max-width: 50ch;
+    z-index: 1;
 }
 /*=================
 Activities Section
