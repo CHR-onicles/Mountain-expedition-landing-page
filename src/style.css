@@ -567,7 +567,6 @@ Activities Section
 =================*/
 .activities {
     --clr-black: hsla(220, 25%, 16%, 0.8);
-    --bg-img: none; /* todo: remove */
 
     position: relative;
     width: 100%;
@@ -608,7 +607,6 @@ Activities Section
 }
 .activities__img-wrapper img {
     transition: transform .5s;
-    /* Useful Beizer curve => cubic-bezier(0.68, -0.55, 0.265, 1.55); */
 }
 .activities__img-wrapper:hover{
     cursor: pointer;
