@@ -519,7 +519,7 @@ Leaders Section
     border: none;
     color: white;
     text-align: center;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 .leaders .container {
     z-index: 1;
