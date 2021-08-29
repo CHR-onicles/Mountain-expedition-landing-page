@@ -21,7 +21,6 @@ const search = document.querySelector(".header__search");
 const client_reviews_section = document.querySelector(".client-reviews");
 const client_row = document.querySelector(".client-reviews .row");
 const client_card = document.querySelectorAll(".clients-reviews__card");
-const activities_section = document.querySelector(".activities");
 
 const no_motion_media_query = window.matchMedia("(prefers-reduced-motion: reduce)");
 let rand_review = getRandomReviewText(review_texts);
@@ -190,30 +189,3 @@ function* getRandomReviewText() {
     }
 }
 /* End Fetching Users For Reviews */
-
-/* Observer for Activities Section Background Image
-    PS: This should have been for all bg images but there are very few
-    so this gets applied on only the above stated.
-    PS 2: Expedition bg image is closer to the hero so it needs to load immediately
-    for a better user experience hence it not being here. */ 
-
-const activitiesBgOptions = {
-    rootMargin: "700px 0",
-    threshold: 0
-}
-
-const  activitiesBgObserver = new IntersectionObserver((entries, activitiesBgObserver) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting){
-            return;
-        } else {
-            window.matchMedia("(min-width: 58.75em)").matches ? 
-            entry.target.style.setProperty("--bg-img", `linear-gradient(var(--clr-black), var(--clr-black)), url("./assets/images/desktop/snowfield.webp") center / cover no-repeat`)
-            : entry.target.style.setProperty("--bg-img", `linear-gradient(var(--clr-black), var(--clr-black)), url("./assets/images/mobile/snowfield.webp") center / cover no-repeat`);
-            activitiesBgObserver.unobserve(entry.target);
-            }
-    });
-});
-
-// activitiesBgObserver.observe(activities_section);
-/* End Observer for Activities Section Background Image */
