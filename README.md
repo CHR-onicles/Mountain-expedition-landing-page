@@ -41,7 +41,7 @@ This is a landing page concept for a Mountain Expedition Club inspired by a [pos
 - Mobile-first workflow
 
 ### What I learned
-I learnt about optimizing images for the web, animations and transitions, how to consume an API using JS Promises and how to observe elements efficiently with the IntersectionObserver API.
+I learnt about optimizing images for the web, optimizing animations and transitions, how to consume an API using JS Promises and how to observe elements efficiently with the IntersectionObserver API.
 <br>I also learnt about the animation preference of users (especially those with impairment) and how to respect them.
 
 
