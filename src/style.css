@@ -248,13 +248,14 @@ Main Header
     width: 0;
     font-size: 0.8125rem;
     font-weight: 700;
-    transition: opacity 0.3s, transform 0.1s;
     z-index: 51;
 }
 .header.nav-active .header__language {
     opacity: 1;
     width: auto;
     transform: translate(-50%, 0);
+    transition: opacity 0.5s, transform 0.5s;
+    transition-delay: .5s;
 }
 .header__search-wrapper {
     position: absolute;
@@ -287,32 +288,28 @@ Main Header
     top: -3px;
     right: 0;
     opacity: 0;
-    width: 0;
+    width: 20px;
     stroke: white;
-    transition: all 0.4s;
+    transform: scale(0);
 }
 .header.nav-active .header__search-icon {
-    width: 20px;
     opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s, transform .4s;
 }
 .header__nav-list-container {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 100%;
-    overflow: hidden;
+    inset: 0;
     opacity: 0;
-    transform: rotateY(90deg);
-    transition: all 0.4s;
+    transform:  scaleX(0);
+    transition: opacity 0.4s, transform .4s;
     z-index: 50;
     clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+    overflow: hidden;
 }
 .header.nav-active .header__nav-list-container {
-    transform: rotate(0deg);
+    transform:  scaleX(1);
     opacity: 1;
-    width: 100%;
-    height: 100%;
 }
 .header__nav-list {
     display: flex;
@@ -337,11 +334,11 @@ Main Header
     font-family: var(--ff-accent);
     font-size: 1.5rem;
     opacity: 0;
-    transition: all 0.4s linear;
-    transition-delay: calc(0.15s * var(--i));
 }
 .header.nav-active .header__nav-list-item a {
     opacity: 1;
+    transition: opacity 0.4s linear;
+    transition-delay: calc(0.15s * var(--i));
 }
 .header__toggle-icon .line1,
 .header__toggle-icon .line2,
@@ -485,7 +482,7 @@ About Us Section
     width: 100%;
     height: 0;
     background: var(--clr-primary);
-    transition: all .4s;
+    transition: top .4s, height .4s;
     z-index: -1;
 }
 .about__about-btn:hover::before{
@@ -615,7 +612,7 @@ Activities Section
     height: 100%;
     width: 0;
     background: var(--clr-primary-dark);
-    transition: all .4s;
+    transition: left .4s, width .4s;
     z-index: -1;
 }
 .activities__btn:hover{
@@ -871,7 +868,7 @@ Contact Us Section
     text-transform: uppercase;
     color: white;
     overflow: hidden;
-    transition: all .4s;
+    transition: background .4s, color .4s, transform .4s;
 }
 .contact-us__submit-btn::before{
     content: "";
@@ -931,7 +928,7 @@ Footer
     height: 35px;
     border: 1px solid var(--clr-primary-v-light);
     border-radius: 50%;
-    transition: all .4s;
+    transition: transform .4s, background .4s, border .4s;
 }
 .footer__social-icon:hover{
     cursor: pointer;
@@ -1036,6 +1033,7 @@ Footer
         right: 0;
         width: 20px;
         opacity: 1;
+        transform: scale(1);
         transition: none;
     }
     .header__nav-list-container {
@@ -1077,7 +1075,9 @@ Footer
         height: 2px;
         border-radius: 10px;
         background: var(--clr-white);
-        transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition-property: left, width;
+        transition-duration: .5s;
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
     .header__nav-list-item a:hover::before,
     .footer__nav-list-item a:hover::before,
