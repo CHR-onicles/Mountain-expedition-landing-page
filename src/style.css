@@ -535,7 +535,6 @@ Leaders Section
     background: url("./assets/images/cloud2.png") center / cover repeat;
     background-size: 200% 100%;
     z-index: -1;
-    /* animation: clouds 120s .5s linear infinite; */
     animation: var(--cloud-animation);
 }
 .leaders__heading {
@@ -763,19 +762,23 @@ Client Reviews Section
     letter-spacing: 4px;
 }
 .client-reviews__card {
-    padding: 1em;
-    border-radius: var(--radius);
-    margin: 2em auto;
-    max-width: 28.125rem;
+    display: flex;
+    flex-direction: column;
     min-height: 16.875rem;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    max-width: 28.125rem;
+    padding: 1em;
+    margin: 2em auto;
     color: var(--clr-black);
+    border-radius: var(--radius);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 .client-reviews__card:nth-child(1){
     margin-top: 2.5em;
 }
 .client-reviews__quotes {
     height: 30px;
+    width: auto;
+    margin: 0 auto;
 }
 .client-reviews__review-text {
     margin: 0.5em auto 0;
@@ -783,7 +786,7 @@ Client Reviews Section
     font-size: 0.9rem;
 }
 .client-reviews__img-wrapper {
-    margin: 1em auto 0.5em;
+    margin: auto auto 0.5em;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -1175,14 +1178,6 @@ Footer
     .client-reviews .row {
         display: flex;
         gap: 1rem;
-    }
-    .client-reviews__quotes {
-        width: auto;
-        margin: 0 auto;
-    }
-    .client-reviews__card {
-        display: flex;
-        flex-direction: column;
     }
     .client-reviews__card:nth-child(1){
         margin-top: 2em;
