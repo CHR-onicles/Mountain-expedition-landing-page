@@ -48,4 +48,4 @@ I learnt about optimizing images for the web, optimizing animations and transiti
 ## Author
 
 - Github - [CHR-onicles](https://www.github.com/CHR-onicles)
-- LinkedIn - [Divine Anum](https://www.linkedin.com/in/divine-a-522b791ab/)
+- LinkedIn - [Divine Anum](https://www.linkedin.com/in/divineanum/)
