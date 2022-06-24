@@ -13,8 +13,56 @@
         <link rel="stylesheet" href="./style.prefix.min.css" />
         <!-- Javascript -->
         <script src="./script.js" defer></script>
+
+        <style>
+            /*=================
+            Custom Properties
+            =================*/
+            :root {
+                --ff-accent: "Gowun Batang", serif;
+                --ff-primary: "Roboto", sans-serif;
+
+                --clr-white: hsl(220, 6%, 90%);
+                --clr-gray-light: hsl(233, 5%, 61%);
+                --clr-gray: hsl(225, 8%, 38%);
+                --clr-black: hsl(220, 15%, 16%);
+
+                --clr-primary-v-light: #aab1bb;
+                --clr-primary-light: hsl(212, 12%, 51%);
+                --clr-primary: hsl(219, 18%, 34%);
+                --clr-primary-desat: hsl(219, 12%, 34%);
+                --clr-primary-dark: hsl(220, 24%, 20%);
+
+                --transition: all 0.3s;
+                --radius: 5px;
+            }
+            
+            .preloader {
+                display: grid;
+                place-items: center;
+                position: fixed;
+                inset: 0;
+                background-color:  var(--clr-primary-dark);
+                z-index: 999;
+            }
+
+            .preloader.disappear {
+                display: none;
+            }
+
+            .preloader svg {
+                fill: var(--clr-white);
+                width: 5rem;
+                height: 5rem;
+            }
+        </style>
     </head>
     <body id="body">
+
+        <!-- Preloaer -->
+        <div class="preloader">
+            <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><rect x="1.5" y="1.5" rx="1" width="9" height="9"><animate id="a" begin="0;b.end+0.15s" attributeName="x" dur="0.6s" values="1.5;.5;1.5" keyTimes="0;.2;1"/><animate begin="0;b.end+0.15s" attributeName="y" dur="0.6s" values="1.5;.5;1.5" keyTimes="0;.2;1"/><animate begin="0;b.end+0.15s" attributeName="width" dur="0.6s" values="9;11;9" keyTimes="0;.2;1"/><animate begin="0;b.end+0.15s" attributeName="height" dur="0.6s" values="9;11;9" keyTimes="0;.2;1"/></rect><rect x="13.5" y="1.5" rx="1" width="9" height="9"><animate begin="a.begin+0.15s" attributeName="x" dur="0.6s" values="13.5;12.5;13.5" keyTimes="0;.2;1"/><animate begin="a.begin+0.15s" attributeName="y" dur="0.6s" values="1.5;.5;1.5" keyTimes="0;.2;1"/><animate begin="a.begin+0.15s" attributeName="width" dur="0.6s" values="9;11;9" keyTimes="0;.2;1"/><animate begin="a.begin+0.15s" attributeName="height" dur="0.6s" values="9;11;9" keyTimes="0;.2;1"/></rect><rect x="13.5" y="13.5" rx="1" width="9" height="9"><animate begin="a.begin+0.3s" attributeName="x" dur="0.6s" values="13.5;12.5;13.5" keyTimes="0;.2;1"/><animate begin="a.begin+0.3s" attributeName="y" dur="0.6s" values="13.5;12.5;13.5" keyTimes="0;.2;1"/><animate begin="a.begin+0.3s" attributeName="width" dur="0.6s" values="9;11;9" keyTimes="0;.2;1"/><animate begin="a.begin+0.3s" attributeName="height" dur="0.6s" values="9;11;9" keyTimes="0;.2;1"/></rect><rect x="1.5" y="13.5" rx="1" width="9" height="9"><animate id="b" begin="a.begin+0.45s" attributeName="x" dur="0.6s" values="1.5;.5;1.5" keyTimes="0;.2;1"/><animate begin="a.begin+0.45s" attributeName="y" dur="0.6s" values="13.5;12.5;13.5" keyTimes="0;.2;1"/><animate begin="a.begin+0.45s" attributeName="width" dur="0.6s" values="9;11;9" keyTimes="0;.2;1"/><animate begin="a.begin+0.45s" attributeName="height" dur="0.6s" values="9;11;9" keyTimes="0;.2;1"/></rect></svg>
+        </div>
 
         <!-- Header -->
         <header class="header">

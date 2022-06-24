@@ -1,25 +1,4 @@
 /*=================
-Custom Properties
-=================*/
-:root {
-    --ff-accent: "Gowun Batang", serif;
-    --ff-primary: "Roboto", sans-serif;
-
-    --clr-white: hsl(220, 6%, 90%);
-    --clr-gray-light: hsl(233, 5%, 61%);
-    --clr-gray: hsl(225, 8%, 38%);
-    --clr-black: hsl(220, 15%, 16%);
-
-    --clr-primary-v-light: #aab1bb;
-    --clr-primary-light: hsl(212, 12%, 51%);
-    --clr-primary: hsl(219, 18%, 34%);
-    --clr-primary-desat: hsl(219, 12%, 34%);
-    --clr-primary-dark: hsl(220, 24%, 20%);
-
-    --transition: all 0.3s;
-    --radius: 5px;
-}
-/*=================
 Global Styles
 =================*/
 *,

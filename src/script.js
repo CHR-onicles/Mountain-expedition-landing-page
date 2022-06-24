@@ -22,10 +22,23 @@ const client_reviews_section = document.querySelector(".client-reviews");
 const client_row = document.querySelector(".client-reviews .row");
 const client_card = document.querySelectorAll(".clients-reviews__card");
 const leaders_section = document.querySelector(".leaders");
+const preloader = document.querySelector(".preloader");
+
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        preloader.classList.add("disappear");
+        setTimeout(() => {
+            banner_elements.forEach((el) => {
+                el.classList.add("appear");
+            });
+        }, 500);
+    }, 2000);
+});
 
 const no_motion_media_query = window.matchMedia("(prefers-reduced-motion: reduce)");
 let dont_check = false;
-if (no_motion_media_query.matches){
+if (no_motion_media_query.matches) {
     counter_cards.forEach((card) => {
         card.children[1].innerText = card.children[1].getAttribute("data-target");
         console.log("first check");
@@ -33,12 +46,6 @@ if (no_motion_media_query.matches){
     })
 }
 let rand_review = getRandomReviewText(review_texts);
-
-setTimeout(() => {
-    banner_elements.forEach((el) => {
-        el.classList.add("appear");
-    });
-}, 1500);
 
 nav_btn.addEventListener("click", () => {
     nav_container.classList.toggle("nav-active");
@@ -109,7 +116,7 @@ const counterObserver = new IntersectionObserver((entries, counterObserver) => {
     });
 }, counterObserverOptions);
 
-if (dont_check === false){
+if (dont_check === false) {
     counter_cards.forEach((card) => {
         counterObserver.observe(card);
     });
@@ -143,7 +150,7 @@ const clientReviewsObserverOptions = {
 
 const clientReviewsObserver = new IntersectionObserver((entries, clientReviewsObserver) => {
     entries.forEach((entry) => {
-        if (!entry.isIntersecting){
+        if (!entry.isIntersecting) {
             return;
         } else {
             getClients();
@@ -167,7 +174,7 @@ async function getClients() {
         card.classList.add("client-reviews__card");
         switch (index) {
             case 0:
-                card.classList.add("fade","fade-in-left");
+                card.classList.add("fade", "fade-in-left");
                 break;
             case 1:
                 card.classList.add("fade", "fade-in-bottom");
@@ -209,7 +216,7 @@ leadersSectionOptions = {
 
 leadersSectionObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        if (!entry.isIntersecting){
+        if (!entry.isIntersecting) {
             return;
         } else {
             entry.target.style.setProperty("--cloud-animation", "clouds 120s linear infinite");
