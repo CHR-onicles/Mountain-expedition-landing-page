@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
                 el.classList.add("appear");
             });
         }, 500);
-    }, 2000);
+    }, 1500);
 });
 
 const no_motion_media_query = window.matchMedia("(prefers-reduced-motion: reduce)");
